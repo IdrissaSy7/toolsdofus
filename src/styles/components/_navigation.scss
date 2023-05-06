@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: $color-1;
+
+  .navtitle {
+    @include center;
+
+    p {
+      display: flex;
+      color: $color-3;
+      font-size: 1.8rem;
+      margin-left: 15px;
+    }
+  }
+
+  img {
+    width: auto;
+    height: 40px;
+  }
+
+  ul {
+    display: flex;
+    cursor: pointer;
+
+    li {
+      display: flex;
+      margin: 15px;
+    }
+  }
+}

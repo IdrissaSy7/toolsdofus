@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: font-1;
+  src: url(../styles/fonts/Ysabeau-VariableFont_wght.ttf);
+}
+
+$color-1: #161719;
+$color-2: #36393c;
+$color-3: #fff;
+$color-4: #d9d9d9;
+$color-5: #c0c0c0;
+$color-6: #008000;
+$color-7: #ff0000;
+
+body {
+  background: $color-2;
+  font-family: "font-1", sans-serif;
+  letter-spacing: 1px;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin shadow {
+  text-shadow: 0 0 15px black;
+}
+
+.title {
+  margin: 0 auto;
+  text-align: center;
+  color: $color-3;
+  margin-top: 20px;
+  @include shadow;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(3px);
+  }
+
+  50% {
+    transform: translateX(-3px);
+  }
+
+  75% {
+    transform: translateX(3px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.loader {
+  font-size: 6em;
+  color: $color-3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
