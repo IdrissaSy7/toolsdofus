@@ -15,7 +15,7 @@ const Home = () => {
           </div>
           <div>
             <p>
-              Ce site fourni des informations à propos du MMORPG
+              Ce site fourni des informations à propos du MMORPG{" "}
               <a href="https://www.dofus.com/fr" target="_blank">
                 Dofus
               </a>
