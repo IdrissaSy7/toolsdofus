@@ -1,0 +1,22 @@
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+#position {
+  position: absolute;
+  z-index: 9998;
+  padding: 10px;
+  background-color: $color-1;
+  color: $color-3;
+  width: 90px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.rectangleOnMap {
+  border: 2px solid $color-1;
+}

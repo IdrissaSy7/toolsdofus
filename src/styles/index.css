@@ -1,1 +1,284 @@
-/*# sourceMappingURL=index.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: font-1;
+  src: url(../styles/fonts/Ysabeau-VariableFont_wght.ttf);
+}
+body {
+  background: #36393c;
+  font-family: "font-1", sans-serif;
+  letter-spacing: 1px;
+}
+body li {
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  text-shadow: 0 0 5px black;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(3px);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.loader {
+  font-size: 6em;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.content {
+  margin-left: 70px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 100vh;
+  background-color: #161719;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.navigation #checkbox {
+  overflow: hidden;
+}
+.navigation #checkbox span {
+  transition: 0.3s ease-in-out;
+  width: 0px;
+}
+.navigation input[type=checkbox]:checked + #checkbox span {
+  width: 150px;
+}
+.navigation input[type=checkbox] {
+  display: none;
+}
+.navigation span,
+.navigation i {
+  display: flex;
+  color: #fff;
+  align-items: center;
+}
+.navigation span {
+  position: relative;
+  left: 10px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px black;
+}
+.navigation i {
+  cursor: pointer;
+  margin: 20px;
+  font-size: 1.8rem;
+}
+.navigation img {
+  width: auto;
+  height: 40px;
+  margin: 15px;
+}
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.navigation ul li {
+  display: flex;
+}
+.navigation ul .active {
+  background: #84b437;
+}
+
+.input {
+  display: grid;
+  align-items: start;
+  margin: 0 auto;
+  width: 90%;
+  height: 400px;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+.input .inputDiv {
+  display: grid;
+  justify-items: center;
+}
+.input .inputDiv label {
+  font-size: 1.3rem;
+  color: #fff;
+  text-shadow: 0 0 5px black;
+}
+.input .inputDiv input {
+  width: 600px;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  font-size: 1.2rem;
+}
+.input button {
+  width: 200px;
+  height: 50px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: 1px solid #161719;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  background: #161719;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.input button:hover {
+  box-shadow: 0px 0px 5px #161719;
+}
+
+.tableau {
+  display: grid;
+  align-items: start;
+  width: 90%;
+  height: 700px;
+  margin: 0 auto;
+}
+.tableau table {
+  border-collapse: collapse;
+  box-shadow: 0 0 10px #161719;
+}
+.tableau table thead {
+  background: #161719;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.tableau table thead th {
+  padding: 15px;
+}
+.tableau table tbody td {
+  padding: 10px 0px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.tableau table tbody td.benefice.positive {
+  color: #008000;
+}
+.tableau table tbody td.benefice.negative {
+  color: #ff0000;
+}
+.tableau table tbody td .deleteItem {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+.tableau table tbody td .deleteItem:hover {
+  animation: shake 0.3s forwards;
+  color: #ff0000;
+}
+.tableau table tbody td.vendu {
+  color: #161719;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.tableau table tbody td.vendu:hover {
+  color: #008000;
+  animation: shake 0.3s forwards;
+}
+.tableau table tbody tr {
+  border-bottom: 1px solid #161719;
+  background: #d9d9d9;
+  color: #161719;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+.tableau table tbody tr.item-vendu {
+  background: #c0c0c0;
+  color: #008000;
+  font-weight: bold;
+}
+.tableau table tbody tr.item-vendu .vendu {
+  color: #008000;
+  animation: none;
+}
+.tableau table tbody tr.item-vendu .vendu:hover {
+  color: #ff0000;
+}
+.tableau table tbody tr.item-vendu .deleteItem {
+  color: #ff0000;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+#position {
+  position: absolute;
+  z-index: 9998;
+  padding: 10px;
+  background-color: #161719;
+  color: #fff;
+  width: 90px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.rectangleOnMap {
+  border: 2px solid #161719;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px;
+}
+.home-content h2,
+.home-content p,
+.home-content a {
+  color: #fff;
+}
+.home-content h2 {
+  margin: 15px 0px;
+}
+.home-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  max-width: 600px;
+}
+.home-content a {
+  font-weight: bolder;
+}/*# sourceMappingURL=index.css.map */

@@ -4,24 +4,35 @@ import { NavLink } from "react-router-dom";
 const Navigation = () => {
   return (
     <div className="navigation">
-      <div className="navtitle">
-        <p>Dotools</p>
-        <img src="./img/encyclopedia.png" alt="image encyclopedie" />
-      </div>
+      <label for="checkbox">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <input type="checkbox" id="checkbox" />
 
-      <ul>
-        <NavLink to="/">
-          <li>
-            <img src="./img/maison.png" alt="image home" />
-          </li>
-        </NavLink>
+      <label htmlFor="checkbox" id="checkbox">
+        <ul>
+          <NavLink to="/">
+            <li>
+              <img src="./img/maison.png" alt="image home" />
+              <span>Accueil</span>
+            </li>
+          </NavLink>
 
-        <NavLink to="/achatrevente">
-          <li>
-            <img src="./img/magasin.png" alt="image magasin" />
-          </li>
-        </NavLink>
-      </ul>
+          <NavLink to="/map">
+            <li>
+              <img src="./img/geoposition.png" alt="image bousolle" />
+              <span>Map</span>
+            </li>
+          </NavLink>
+
+          <NavLink to="/achatrevente">
+            <li>
+              <img src="./img/magasin.png" alt="image magasin" />
+              <span>Vente</span>
+            </li>
+          </NavLink>
+        </ul>
+      </label>
     </div>
   );
 };

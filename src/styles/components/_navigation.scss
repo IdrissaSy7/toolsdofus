@@ -1,33 +1,69 @@
 .navigation {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: 60px;
+  align-items: start;
+  height: 100vh;
   background-color: $color-1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 
-  .navtitle {
-    @include center;
+  #checkbox {
+    overflow: hidden;
+  }
 
-    p {
-      display: flex;
-      color: $color-3;
-      font-size: 1.8rem;
-      margin-left: 15px;
-    }
+  #checkbox span {
+    transition: 0.3s ease-in-out;
+    width: 0px;
+  }
+
+  input[type="checkbox"]:checked + #checkbox span {
+    width: 150px;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  span,
+  i {
+    display: flex;
+    color: $color-3;
+    align-items: center;
+  }
+
+  span {
+    position: relative;
+    left: 10px;
+    font-size: 1.5rem;
+    @include shadow;
+  }
+
+  i {
+    cursor: pointer;
+    margin: 20px;
+    font-size: 1.8rem;
   }
 
   img {
     width: auto;
     height: 40px;
+    margin: 15px;
   }
 
   ul {
     display: flex;
+    flex-direction: column;
     cursor: pointer;
 
     li {
       display: flex;
-      margin: 15px;
+    }
+
+    .active {
+      background: $color-8;
     }
   }
 }
