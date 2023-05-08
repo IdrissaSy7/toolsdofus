@@ -10,13 +10,14 @@ const OutilMap = () => {
     const config = {
       mapImgWidth: 910,
       mapImgHeight: 653,
-      minZoom: 1,
+      minZoom: 2,
       maxZoom: 3,
       tileSize: 256,
       crs: L.CRS.Simple,
       attributionControl: false,
       ratio: 7,
       zoomControl: false,
+      zoomSnap: 0.5,
     };
 
     const zoom = 1; // Zoom initial
@@ -47,6 +48,7 @@ const OutilMap = () => {
       return [mapY, mapX];
     }
 
+    // Fonction pour voir les coordonnées
     function mouseMoveOnMap(e) {
       let coords = leafletCoordsToDofusCoords(e.latlng.lat, e.latlng.lng);
       let x = Math.floor(coords[0]);
@@ -59,12 +61,22 @@ const OutilMap = () => {
       objOnMap.rectangle.setLatLng(dofusCoordsToLeafletCoords(x, y));
     }
 
+    // Met a jour le rectangle en fonction du zoom
     function zoomChangeOnMap(e) {
       var iconRectangle = objOnMap.rectangle.options.icon;
       iconRectangle.options.iconSize = getRectangleOnMapSize();
       objOnMap.rectangle.setIcon(iconRectangle);
+
+      // Mets à jour la taille de l'image en fonction du niveau de zoom
+      const zoom = map.getZoom();
+      const iconHeight = 10 * Math.pow(2.1, zoom - 1);
+      document.documentElement.style.setProperty(
+        "--icon-height",
+        `${iconHeight}px`
+      );
     }
 
+    // Regle la taille du rectangle
     function getRectangleOnMapSize() {
       var zoom = map.getZoom();
       return [
@@ -86,21 +98,15 @@ const OutilMap = () => {
       }),
     }).addTo(map);
 
-    // Fonction pour copier les coordonnées et mettre à jour l'état local
-    const copyCoordinates = (e) => {
-      const coords = leafletCoordsToDofusCoords(e.latlng.lat, e.latlng.lng);
-      const x = Math.floor(coords[0]);
-      const y = Math.floor(coords[1]);
+    // Fonction pour copier les coordonnées
+    window.copyCoordinates = function (x, y) {
       const textToCopy = `/travel ${x} ${y}`;
 
       try {
         navigator.clipboard.writeText(textToCopy);
-        console.log("Position copiée:", textToCopy);
-
-        // Mettre à jour l'état local avec la position copiée
+        console.log(" Position copiée:", textToCopy);
         setCopiedPosition({ x, y });
-
-        // Cacher l'indicateur de position après 1,5 secondes
+        // Cache l'indicateur de position après 1,5 secondes
         setTimeout(() => {
           setCopiedPosition(null);
         }, 1500);
@@ -109,13 +115,43 @@ const OutilMap = () => {
       }
     };
 
+    // Pop-up au clic sur une position
+    const popup = (e) => {
+      const coords = leafletCoordsToDofusCoords(e.latlng.lat, e.latlng.lng);
+      const x = Math.floor(coords[0]);
+      const y = Math.floor(coords[1]);
+
+      // Convertie les coordonnées Dofus en Leaflet
+      const latlng = dofusCoordsToLeafletCoords(x, y);
+
+      var popupContent = `
+        <div class="popupContent">
+          <p>
+          <img src="./img/dragodinde.png" alt="image dragodinde" />
+          Voyager vers 
+            <span onclick="copyCoordinates('${x}', '${y}')">
+              <span> [${x}, ${y}]</span>
+            </span>
+          </p>
+        </div>
+      `;
+
+      var popupInstance = L.popup()
+        .setLatLng(latlng)
+        .setContent(popupContent)
+        .openOn(map);
+
+      setTimeout(() => {
+        popupInstance.remove();
+      }, 3000);
+    };
+
     // Groupe les ressources qui sont au meme point
     function groupAndCountPoints(points) {
       const grouped = {};
 
       points.forEach((point) => {
-        const key = point.toString(); // Convertir les coordonnées en chaîne pour les utiliser comme clé
-
+        const key = point.toString();
         if (!grouped[key]) {
           grouped[key] = { count: 1, coordinates: point };
         } else {
@@ -129,18 +165,15 @@ const OutilMap = () => {
     // Crée un indicateur de ressources
     function createNumberedIcon(number, imgUrl) {
       return L.divIcon({
-        className: "numbered-icon", // Nom de classe pour appliquer des styles personnalisés
-        html: `<div class="numbered-icon-text">
-    <span>${number}</span>
-    <img src="${imgUrl}" alt="Resource icon" />
-    </div>`,
-        // Contenu HTML avec le nombre de ressources et l'image
-        iconSize: [0, 0], // Taille de l'icône en pixels
-        iconAnchor: [-25, 7], // Point de l'icône à aligner avec la position du marqueur
+        className: "numbered-icon",
+        html: `
+                <img src="${imgUrl}" alt="Resource icon" />
+                <span>${number}</span>
+              `,
       });
     }
 
-    // Créez une fonction pour ajouter des marqueurs pour chaque ressource
+    // Fonction pour ajouter des marqueurs pour chaque ressource
     function addResourceMarkers(
       resourceGroup,
       resourceName,
@@ -158,7 +191,7 @@ const OutilMap = () => {
       });
     }
 
-    // Ajoutez les groupes de métiers à overlayMaps
+    // Ajoute les groupes de métiers à overlayMaps
     const overlayMaps = {
       Alchimiste: {},
       Bucheron: {},
@@ -167,7 +200,7 @@ const OutilMap = () => {
       Pecheur: {},
     };
 
-    // // Bouclez sur les métiers et leurs ressources pour ajouter des marqueurs
+    // Boucle sur les métiers et leurs ressources pour ajouter des marqueurs
     for (const job in jobs) {
       const jobResources = jobs[job];
       jobResources.forEach((resource) => {
@@ -184,7 +217,7 @@ const OutilMap = () => {
       });
     }
 
-    // // Fonction pour fermer tous les layers sauf celui qui est passé en argument
+    // Fonction pour fermer tous les layers sauf celui qui est passé en argument
     function closeOtherLayers(excludeJob) {
       Object.keys(overlayMaps).forEach((job) => {
         if (job !== excludeJob) {
@@ -200,7 +233,7 @@ const OutilMap = () => {
       });
     }
 
-    // Créez un L.Control.Layers pour chaque métier
+    // Crée un L.Control.Layers pour chaque métier
     Object.keys(overlayMaps).forEach((job) => {
       const control = L.control.layers(null, overlayMaps[job], {
         collapsed: false,
@@ -208,13 +241,13 @@ const OutilMap = () => {
       });
       control.addTo(map);
 
-      // Ajoutez un titre pour chaque métier
+      // Ajoute un titre pour chaque métier
       const controlContainer = control.getContainer();
       const title = L.DomUtil.create("div", "job-title", controlContainer);
       title.innerText = job;
       title.setAttribute("data-job", job.toLowerCase());
 
-      // Ajoutez un conteneur pour les ressources
+      // Ajoute un conteneur pour les ressources
       const resourcesContainer = L.DomUtil.create(
         "div",
         "job-resources",
@@ -225,7 +258,7 @@ const OutilMap = () => {
       );
       resourcesContainer.appendChild(layersList);
 
-      // Ajouter le conteneur pour les ressources à l'intérieur du titre
+      // Ajoute le conteneur pour les ressources à l'intérieur du titre
       title.appendChild(resourcesContainer);
 
       title.addEventListener("click", () => {
@@ -239,7 +272,7 @@ const OutilMap = () => {
 
     map.on("mousemove", mouseMoveOnMap);
     map.on("zoomend", zoomChangeOnMap);
-    map.on("click", copyCoordinates);
+    map.on("click", popup);
     map.on("click", () => {
       closeOtherLayers();
     });
@@ -255,6 +288,7 @@ const OutilMap = () => {
     <>
       {copiedPosition && (
         <div id="position-indicator">
+          <img src="./img/dragodinde.png" alt="image dragodinde" />
           Position copiée : {copiedPosition.x}, {copiedPosition.y}
         </div>
       )}

@@ -19,6 +19,7 @@
 
 .rectangleOnMap {
   border: 2px solid $color-1;
+  border-radius: 5px;
 }
 
 #position-indicator {
@@ -31,32 +32,90 @@
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.numbered-icon {
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
+
+  & img {
+    width: auto;
+    height: 30px;
+    margin: 0 5px 0 0;
+  }
 }
 
-.numbered-icon-text img {
-  width: auto;
-  height: 45px;
+.numbered-icon {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 80% 20%;
+  margin: 0 !important;
+  margin-top: -4px !important;
+  margin-left: -1px !important;
+  width: initial !important;
+  height: initial !important;
+
+  & img {
+    width: auto;
+    height: var(--icon-height, 15px);
+  }
+
+  & span {
+    font-size: 0.95rem;
+    color: $color-3;
+    text-shadow: 0 0 3px $color-1;
+    font-weight: bolder;
+    position: relative;
+    top: 6px;
+    left: -3px;
+  }
 }
 
-.numbered-icon-text {
-  width: 50px;
+.leaflet-popup-content-wrapper {
+  background: $color-1;
+  color: $color-3;
+  font-size: 1rem;
+  font-family: "font-1", sans-serif;
+  width: 300px;
   height: 50px;
+
+  .leaflet-popup-content {
+    margin: 0;
+    width: 300px;
+    height: 50px;
+    min-height: 0;
+  }
 }
 
-.numbered-icon-text span {
-  font-size: 1.1rem;
-  position: relative;
-  top: 45px;
-  left: 35px;
-  text-shadow: 0 0 3px black;
+.leaflet-popup-close-button,
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+.popupContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  height: 100%;
+
+  p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span {
+    margin-left: 5px;
+    font-size: 1.2rem;
+    color: $color-8;
+    cursor: pointer;
+  }
+
+  & img {
+    width: auto;
+    height: 30px;
+  }
 }
 
 .leaflet-left {
@@ -67,16 +126,419 @@
   top: 10px;
 }
 
+.leaflet-control-layers-expanded {
+  padding: 0;
+  border-radius: 10px;
+}
+
 .job-title {
   text-indent: -9999px;
   width: 50px;
   height: 50px;
   cursor: pointer;
-}
 
-.leaflet-control-layers-expanded {
-  padding: 0;
-  border-radius: 10px;
+  &[data-job="alchimiste"] {
+    background: url("../../../public/Ressources/Alchimiste/alchimiste.webp")
+      center/cover;
+
+    & label:nth-child(1) {
+      background: url("../../../public/Ressources/Alchimiste/Ortie.png")
+        center/cover;
+    }
+
+    & label:nth-child(2) {
+      background: url("../../../public/Ressources/Alchimiste/Sauge.png")
+        center/cover;
+    }
+
+    & label:nth-child(3) {
+      background: url("../../../public/Ressources/Alchimiste/Trefle.png")
+        center/cover;
+    }
+
+    & label:nth-child(4) {
+      background: url("../../../public/Ressources/Alchimiste/Menthe.png")
+        center/cover;
+    }
+
+    & label:nth-child(5) {
+      background: url("../../../public/Ressources/Alchimiste/Orchidee.png")
+        center/cover;
+    }
+    & label:nth-child(6) {
+      background: url("../../../public/Ressources/Alchimiste/Edelweiss.png")
+        center/cover;
+    }
+    & label:nth-child(7) {
+      background: url("../../../public/Ressources/Alchimiste/Pandouille.png")
+        center/cover;
+    }
+    & label:nth-child(8) {
+      background: url("../../../public/Ressources/Alchimiste/Ginseng.png")
+        center/cover;
+    }
+    & label:nth-child(9) {
+      background: url("../../../public/Ressources/Alchimiste/Belladone.png")
+        center/cover;
+    }
+    & label:nth-child(10) {
+      background: url("../../../public/Ressources/Alchimiste/Mandragore.png")
+        center/cover;
+    }
+    & label:nth-child(11) {
+      background: url("../../../public/Ressources/Alchimiste/PerceNeige.png")
+        center/cover;
+    }
+    & label:nth-child(12) {
+      background: url("../../../public/Ressources/Alchimiste/Salikrone.png")
+        center/cover;
+    }
+    & label:nth-child(13) {
+      background: url("../../../public/Ressources/Alchimiste/Tuile.png")
+        center/cover;
+    }
+  }
+
+  &[data-job="bucheron"] {
+    background: url("../../../public/Ressources/Bucheron/bucheron.webp")
+      center/cover;
+
+    & label:nth-child(1) {
+      background: url("../../../public/Ressources/Bucheron/Frene.png")
+        center/cover;
+    }
+
+    & label:nth-child(2) {
+      background: url("../../../public/Ressources/Bucheron/Chataigner.png")
+        center/cover;
+    }
+
+    & label:nth-child(3) {
+      background: url("../../../public/Ressources/Bucheron/Noyer.png")
+        center/cover;
+    }
+
+    & label:nth-child(4) {
+      background: url("../../../public/Ressources/Bucheron/Chene.png")
+        center/cover;
+    }
+
+    & label:nth-child(5) {
+      background: url("../../../public/Ressources/Bucheron/Bombu.png")
+        center/cover;
+    }
+    & label:nth-child(6) {
+      background: url("../../../public/Ressources/Bucheron/Erable.png")
+        center/cover;
+    }
+    & label:nth-child(7) {
+      background: url("../../../public/Ressources/Bucheron/Oliviolet.png")
+        center/cover;
+    }
+    & label:nth-child(8) {
+      background: url("../../../public/Ressources/Bucheron/Pin.png")
+        center/cover;
+    }
+    & label:nth-child(9) {
+      background: url("../../../public/Ressources/Bucheron/If.png") center/cover;
+    }
+    & label:nth-child(10) {
+      background: url("../../../public/Ressources/Bucheron/Bambou.png")
+        center/cover;
+    }
+    & label:nth-child(11) {
+      background: url("../../../public/Ressources/Bucheron/Merisier.png")
+        center/cover;
+    }
+    & label:nth-child(12) {
+      background: url("../../../public/Ressources/Bucheron/Noisetier.png")
+        center/cover;
+    }
+    & label:nth-child(13) {
+      background: url("../../../public/Ressources/Bucheron/Ebene.png")
+        center/cover;
+    }
+    & label:nth-child(14) {
+      background: url("../../../public/Ressources/Bucheron/Kaliptus.png")
+        center/cover;
+    }
+    & label:nth-child(15) {
+      background: url("../../../public/Ressources/Bucheron/Charme.png")
+        center/cover;
+    }
+    & label:nth-child(16) {
+      background: url("../../../public/Ressources/Bucheron/BambouSombre.png")
+        center/cover;
+    }
+    & label:nth-child(17) {
+      background: url("../../../public/Ressources/Bucheron/Orme.png")
+        center/cover;
+    }
+    & label:nth-child(18) {
+      background: url("../../../public/Ressources/Bucheron/BambouSacre.png")
+        center/cover;
+    }
+    & label:nth-child(19) {
+      background: url("../../../public/Ressources/Bucheron/Tremble.png")
+        center/cover;
+    }
+    & label:nth-child(20) {
+      background: url("../../../public/Ressources/Bucheron/Aquajou.png")
+        center/cover;
+    }
+  }
+
+  &[data-job="paysan"] {
+    background: url("../../../public/Ressources/Paysan/paysan.webp")
+      center/cover;
+
+    & label:nth-child(1) {
+      background: url("../../../public/Ressources/Paysan/Ble.png") center/cover;
+    }
+
+    & label:nth-child(2) {
+      background: url("../../../public/Ressources/Paysan/Orge.png") center/cover;
+    }
+
+    & label:nth-child(3) {
+      background: url("../../../public/Ressources/Paysan/Avoine.png")
+        center/cover;
+    }
+
+    & label:nth-child(4) {
+      background: url("../../../public/Ressources/Paysan/Houblon.png")
+        center/cover;
+    }
+
+    & label:nth-child(5) {
+      background: url("../../../public/Ressources/Paysan/Lin.png") center/cover;
+    }
+    & label:nth-child(6) {
+      background: url("../../../public/Ressources/Paysan/Seigle.png")
+        center/cover;
+    }
+    & label:nth-child(7) {
+      background: url("../../../public/Ressources/Paysan/Riz.png") center/cover;
+    }
+    & label:nth-child(8) {
+      background: url("../../../public/Ressources/Paysan/Malt.png") center/cover;
+    }
+    & label:nth-child(9) {
+      background: url("../../../public/Ressources/Paysan/Chanvre.png")
+        center/cover;
+    }
+    & label:nth-child(10) {
+      background: url("../../../public/Ressources/Paysan/Mais.png") center/cover;
+    }
+    & label:nth-child(11) {
+      background: url("../../../public/Ressources/Paysan/Millet.png")
+        center/cover;
+    }
+    & label:nth-child(12) {
+      background: url("../../../public/Ressources/Paysan/Frostiz.png")
+        center/cover;
+    }
+    & label:nth-child(13) {
+      background: url("../../../public/Ressources/Paysan/Quisnoa.png")
+        center/cover;
+    }
+  }
+
+  &[data-job="mineur"] {
+    background: url("../../../public/Ressources/Mineur/mineur.webp")
+      center/cover;
+
+    & label:nth-child(1) {
+      background: url("../../../public/Ressources/Mineur/Fer.png") center/cover;
+    }
+
+    & label:nth-child(2) {
+      background: url("../../../public/Ressources/Mineur/Cuivre.png")
+        center/cover;
+    }
+
+    & label:nth-child(3) {
+      background: url("../../../public/Ressources/Mineur/Bronze.png")
+        center/cover;
+    }
+
+    & label:nth-child(4) {
+      background: url("../../../public/Ressources/Mineur/Kobalte.png")
+        center/cover;
+    }
+
+    & label:nth-child(5) {
+      background: url("../../../public/Ressources/Mineur/Manganese.png")
+        center/cover;
+    }
+    & label:nth-child(6) {
+      background: url("../../../public/Ressources/Mineur/Etain.png")
+        center/cover;
+    }
+    & label:nth-child(7) {
+      background: url("../../../public/Ressources/Mineur/Silicate.png")
+        center/cover;
+    }
+    & label:nth-child(8) {
+      background: url("../../../public/Ressources/Mineur/Argent.png")
+        center/cover;
+    }
+    & label:nth-child(9) {
+      background: url("../../../public/Ressources/Mineur/Bauxite.png")
+        center/cover;
+    }
+    & label:nth-child(10) {
+      background: url("../../../public/Ressources/Mineur/Or.png") center/cover;
+    }
+    & label:nth-child(11) {
+      background: url("../../../public/Ressources/Mineur/Dolomite.png")
+        center/cover;
+    }
+    & label:nth-child(12) {
+      background: url("../../../public/Ressources/Mineur/Cendrepierre.png")
+        center/cover;
+    }
+    & label:nth-child(13) {
+      background: url("../../../public/Ressources/Mineur/Obsidienne.png")
+        center/cover;
+    }
+    & label:nth-child(14) {
+      background: url("../../../public/Ressources/Mineur/Ecume.png")
+        center/cover;
+    }
+    & label:nth-child(15) {
+      background: url("../../../public/Ressources/Mineur/CristalPliable.png")
+        center/cover;
+    }
+    & label:nth-child(16) {
+      background: url("../../../public/Ressources/Mineur/CristalLiquide.png")
+        center/cover;
+    }
+  }
+
+  &[data-job="pecheur"] {
+    background: url("../../../public/Ressources/Pecheur/pecheur.webp")
+      center/cover;
+
+    & label:nth-child(1) {
+      background: url("../../../public/Ressources/Pecheur/Goujon.png")
+        center/cover;
+    }
+
+    & label:nth-child(2) {
+      background: url("../../../public/Ressources/Pecheur/Greuvette.png")
+        center/cover;
+    }
+
+    & label:nth-child(3) {
+      background: url("../../../public/Ressources/Pecheur/Truite.png")
+        center/cover;
+    }
+
+    & label:nth-child(4) {
+      background: url("../../../public/Ressources/Pecheur/Crabe.png")
+        center/cover;
+    }
+
+    & label:nth-child(5) {
+      background: url("../../../public/Ressources/Pecheur/PoissonChaton.png")
+        center/cover;
+    }
+    & label:nth-child(6) {
+      background: url("../../../public/Ressources/Pecheur/PoissonPane.png")
+        center/cover;
+    }
+    & label:nth-child(7) {
+      background: url("../../../public/Ressources/Pecheur/Carpe.png")
+        center/cover;
+    }
+    & label:nth-child(8) {
+      background: url("../../../public/Ressources/Pecheur/Sardine.png")
+        center/cover;
+    }
+    & label:nth-child(9) {
+      background: url("../../../public/Ressources/Pecheur/Brochet.png")
+        center/cover;
+    }
+    & label:nth-child(10) {
+      background: url("../../../public/Ressources/Pecheur/Kralamoure.png")
+        center/cover;
+    }
+    & label:nth-child(11) {
+      background: url("../../../public/Ressources/Pecheur/Anguille.png")
+        center/cover;
+    }
+    & label:nth-child(12) {
+      background: url("../../../public/Ressources/Pecheur/Dorade.png")
+        center/cover;
+    }
+    & label:nth-child(13) {
+      background: url("../../../public/Ressources/Pecheur/Perche.png")
+        center/cover;
+    }
+    & label:nth-child(14) {
+      background: url("../../../public/Ressources/Pecheur/Raie.png")
+        center/cover;
+    }
+    & label:nth-child(15) {
+      background: url("../../../public/Ressources/Pecheur/Lotte.png")
+        center/cover;
+    }
+    & label:nth-child(16) {
+      background: url("../../../public/Ressources/Pecheur/Requin.png")
+        center/cover;
+    }
+    & label:nth-child(17) {
+      background: url("../../../public/Ressources/Pecheur/Bar.png") center/cover;
+    }
+    & label:nth-child(18) {
+      background: url("../../../public/Ressources/Pecheur/Morue.png")
+        center/cover;
+    }
+    & label:nth-child(19) {
+      background: url("../../../public/Ressources/Pecheur/Tanche.png")
+        center/cover;
+    }
+    & label:nth-child(20) {
+      background: url("../../../public/Ressources/Pecheur/Espadon.png")
+        center/cover;
+    }
+    & label:nth-child(21) {
+      background: url("../../../public/Ressources/Pecheur/Poisskaille.png")
+        center/cover;
+    }
+    & label:nth-child(22) {
+      background: url("../../../public/Ressources/Pecheur/Patelle.png")
+        center/cover;
+    }
+    & label:nth-child(23) {
+      background: url("../../../public/Ressources/Pecheur/Pichon.png")
+        center/cover;
+    }
+  }
+
+  & label {
+    width: 50px;
+    height: 50px;
+    border: 1px solid $color-2;
+    box-shadow: 0 0 1px inset $color-8;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    color: $color-3;
+    position: relative;
+  }
+
+  & label input[type="checkbox"]:checked + span::after {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    border: 3px solid $color-6;
+    left: -3px;
+    top: -3px;
+  }
 }
 
 .job-resources {
@@ -88,24 +550,24 @@
   display: flex;
   position: absolute;
   left: 80px;
-  box-shadow: 0 0 5px black;
-}
+  box-shadow: 0 0 5px $color-1;
 
-.job-resources.open {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 9999;
-}
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 9999;
 
-.job-resources.open::before {
-  content: "";
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  border: 3px solid $color-1;
-  left: -82px;
-  top: -20px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      border: 3px solid $color-1;
+      left: -82px;
+      top: -20px;
+    }
+  }
 }
 
 .leaflet-control-layers-overlays {
@@ -115,62 +577,4 @@
   justify-items: start;
   width: 100%;
   height: 100%;
-}
-
-.job-title[data-job="alchimiste"] {
-  background: url("../../../public/Ressources/Alchimiste/alchimiste.webp")
-    center/cover;
-}
-
-.job-title[data-job="bucheron"] {
-  background: url("../../../public/Ressources/Bucheron/bucheron.webp")
-    center/cover;
-}
-
-.job-title[data-job="paysan"] {
-  background: url("../../../public/Ressources/Paysan/paysan.webp") center/cover;
-}
-
-.job-title[data-job="mineur"] {
-  background: url("../../../public/Ressources/Mineur/mineur.webp") center/cover;
-}
-
-.job-title[data-job="pecheur"] {
-  background: url("../../../public/Ressources/Pecheur/pecheur.webp")
-    center/cover;
-}
-
-.job-title label {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #6c6c6c;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 10px;
-  color: white;
-  position: relative;
-}
-
-.job-title label input[type="checkbox"]:checked + span::after {
-  content: "";
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  border-radius: 15px;
-  border: 3px solid green;
-  left: -3px;
-  top: -3px;
-}
-
-.job-title[data-job="alchimiste"] label:nth-child(1) {
-  background: url("../../../public/Ressources/Alchimiste/Ortie.png")
-    center/cover;
-}
-
-.job-title[data-job="alchimiste"] label:nth-child(2) {
-  color: blue;
-}
-
-.job-title[data-job="bucheron"] label:nth-child(1) {
-  color: yellow;
 }
