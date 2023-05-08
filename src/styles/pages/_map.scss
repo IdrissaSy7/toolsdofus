@@ -20,3 +20,157 @@
 .rectangleOnMap {
   border: 2px solid $color-1;
 }
+
+#position-indicator {
+  position: absolute;
+  z-index: 9999;
+  background: $color-1;
+  color: $color-3;
+  padding: 10px;
+  border-radius: 15px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.numbered-icon {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.numbered-icon-text img {
+  width: auto;
+  height: 45px;
+}
+
+.numbered-icon-text {
+  width: 50px;
+  height: 50px;
+}
+
+.numbered-icon-text span {
+  font-size: 1.1rem;
+  position: relative;
+  top: 45px;
+  left: 35px;
+  text-shadow: 0 0 3px black;
+}
+
+.leaflet-left {
+  left: 80px;
+}
+
+.leaflet-top {
+  top: 10px;
+}
+
+.job-title {
+  text-indent: -9999px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.leaflet-control-layers-expanded {
+  padding: 0;
+  border-radius: 10px;
+}
+
+.job-resources {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, pointer-events 0.2s ease-in-out;
+  background-color: $color-1;
+  border-radius: 15px;
+  display: flex;
+  position: absolute;
+  left: 80px;
+  box-shadow: 0 0 5px black;
+}
+
+.job-resources.open {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+.job-resources.open::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: 3px solid $color-1;
+  left: -82px;
+  top: -20px;
+}
+
+.leaflet-control-layers-overlays {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-content: space-around;
+  justify-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.job-title[data-job="alchimiste"] {
+  background: url("../../../public/Ressources/Alchimiste/alchimiste.webp")
+    center/cover;
+}
+
+.job-title[data-job="bucheron"] {
+  background: url("../../../public/Ressources/Bucheron/bucheron.webp")
+    center/cover;
+}
+
+.job-title[data-job="paysan"] {
+  background: url("../../../public/Ressources/Paysan/paysan.webp") center/cover;
+}
+
+.job-title[data-job="mineur"] {
+  background: url("../../../public/Ressources/Mineur/mineur.webp") center/cover;
+}
+
+.job-title[data-job="pecheur"] {
+  background: url("../../../public/Ressources/Pecheur/pecheur.webp")
+    center/cover;
+}
+
+.job-title label {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #6c6c6c;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  color: white;
+  position: relative;
+}
+
+.job-title label input[type="checkbox"]:checked + span::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  border: 3px solid green;
+  left: -3px;
+  top: -3px;
+}
+
+.job-title[data-job="alchimiste"] label:nth-child(1) {
+  background: url("../../../public/Ressources/Alchimiste/Ortie.png")
+    center/cover;
+}
+
+.job-title[data-job="alchimiste"] label:nth-child(2) {
+  color: blue;
+}
+
+.job-title[data-job="bucheron"] label:nth-child(1) {
+  color: yellow;
+}
