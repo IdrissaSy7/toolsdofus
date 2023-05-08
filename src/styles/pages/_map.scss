@@ -21,6 +21,26 @@
   border: 2px solid $color-1;
   border-radius: 5px;
 }
+#position-indicator {
+  position: absolute;
+  z-index: 9999;
+  background: $color-1;
+  color: $color-3;
+  padding: 10px;
+  border-radius: 15px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    width: auto;
+    height: 30px;
+    margin: 0 5px 0 0;
+  }
+}
 
 .numbered-icon {
   display: grid;
