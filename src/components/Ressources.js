@@ -92,7 +92,7 @@ const jobs = {
       imgUrl: "./Ressources/Alchimiste/Sauge.png",
     },
     {
-      name: "Trefle à 5 feuilles",
+      name: "Trèfle à 5 feuilles",
       data: Trefle.Trefle,
       imgUrl: "./Ressources/Alchimiste/Trefle.png",
     },
@@ -102,7 +102,7 @@ const jobs = {
       imgUrl: "./Ressources/Alchimiste/Menthe.png",
     },
     {
-      name: "Orchidee Freyesque",
+      name: "Orchidée Freyesque",
       data: Orchidee.Orchidee,
       imgUrl: "./Ressources/Alchimiste/Orchidee.png",
     },
@@ -133,18 +133,18 @@ const jobs = {
     },
     {
       data: PerceNeige.PerceNeige,
-      name: "Perce Neige",
+      name: "Perce-Neige",
       imgUrl: "./Ressources/Alchimiste/PerceNeige.png",
     },
   ],
   Bucheron: [
     {
-      name: "Bois de Frene",
+      name: "Bois de Frêne",
       data: Frene.Frene,
       imgUrl: "./Ressources/Bucheron/Frene.png",
     },
     {
-      name: "Bois de Chataigner",
+      name: "Bois de Châtaignier",
       data: Chataigner.Chataigner,
       imgUrl: "./Ressources/Bucheron/Chataigner.png",
     },
@@ -154,7 +154,7 @@ const jobs = {
       imgUrl: "./Ressources/Bucheron/Noyer.png",
     },
     {
-      name: "Bois de Chene",
+      name: "Bois de Chêne",
       data: Chene.Chene,
       imgUrl: "./Ressources/Bucheron/Chene.png",
     },
@@ -164,7 +164,7 @@ const jobs = {
       imgUrl: "./Ressources/Bucheron/Bombu.png",
     },
     {
-      name: "Bois d'Erable",
+      name: "Bois d'Érable",
       data: Erable.Erable,
       imgUrl: "./Ressources/Bucheron/Erable.png",
     },
@@ -199,7 +199,7 @@ const jobs = {
       imgUrl: "./Ressources/Bucheron/Noisetier.png",
     },
     {
-      name: "Bois d'Ebene",
+      name: "Bois d'Ébène",
       data: Ebene.Ebene,
       imgUrl: "./Ressources/Bucheron/Ebene.png",
     },
@@ -224,7 +224,7 @@ const jobs = {
       imgUrl: "./Ressources/Bucheron/Orme.png",
     },
     {
-      name: "Bois de Bambou Sacre",
+      name: "Bois de Bambou Sacré",
       data: BambouSacre.BambouSacre,
       imgUrl: "./Ressources/Bucheron/BambouSacre.png",
     },
@@ -236,7 +236,7 @@ const jobs = {
   ],
   Paysan: [
     {
-      name: "Ble",
+      name: "Blé",
       data: Ble.Ble,
       imgUrl: "./Ressources/Paysan/Ble.png",
     },
@@ -281,7 +281,7 @@ const jobs = {
       imgUrl: "./Ressources/Paysan/Chanvre.png",
     },
     {
-      name: "Mais",
+      name: "Maïs",
       data: Mais.Mais,
       imgUrl: "./Ressources/Paysan/Mais.png",
     },
@@ -318,12 +318,12 @@ const jobs = {
       imgUrl: "./Ressources/Mineur/Kobalte.png",
     },
     {
-      name: "Manganese",
+      name: "Manganèse",
       data: Manganese.Manganese,
       imgUrl: "./Ressources/Mineur/Manganese.png",
     },
     {
-      name: "Etain",
+      name: "Étain",
       data: Etain.Etain,
       imgUrl: "./Ressources/Mineur/Etain.png",
     },
@@ -376,27 +376,27 @@ const jobs = {
       imgUrl: "./Ressources/Pecheur/Truite.png",
     },
     {
-      name: "Crabe",
+      name: "Crabe Sourimi",
       data: Crabe.Crabe,
       imgUrl: "./Ressources/Pecheur/Crabe.png",
     },
     {
-      name: "Poisson Chaton",
+      name: "Poisson-Chaton",
       data: PoissonChaton.PoissonChaton,
       imgUrl: "./Ressources/Pecheur/PoissonChaton.png",
     },
     {
-      name: "Poisson Pane",
+      name: "Poisson Pané",
       data: PoissonPane.PoissonPane,
       imgUrl: "./Ressources/Pecheur/PoissonPane.png",
     },
     {
-      name: "Carpe",
+      name: "Carpe d'Iem",
       data: Carpe.Carpe,
       imgUrl: "./Ressources/Pecheur/Carpe.png",
     },
     {
-      name: "Sardine",
+      name: "Sardine Brillante",
       data: Sardine.Sardine,
       imgUrl: "./Ressources/Pecheur/Sardine.png",
     },
@@ -416,7 +416,7 @@ const jobs = {
       imgUrl: "./Ressources/Pecheur/Anguille.png",
     },
     {
-      name: "Dorade",
+      name: "Dorade Grise",
       data: Dorade.Dorade,
       imgUrl: "./Ressources/Pecheur/Dorade.png",
     },
@@ -426,7 +426,7 @@ const jobs = {
       imgUrl: "./Ressources/Pecheur/Perche.png",
     },
     {
-      name: "Raie",
+      name: "Raie Bleue",
       data: Raie.Raie,
       imgUrl: "./Ressources/Pecheur/Raie.png",
     },
@@ -436,12 +436,12 @@ const jobs = {
       imgUrl: "./Ressources/Pecheur/Lotte.png",
     },
     {
-      name: "Requin",
+      name: "Requin Marteau-Faucille",
       data: Requin.Requin,
       imgUrl: "./Ressources/Pecheur/Requin.png",
     },
     {
-      name: "Bar",
+      name: "Bar Rikain",
       data: Bar.Bar,
       imgUrl: "./Ressources/Pecheur/Bar.png",
     },

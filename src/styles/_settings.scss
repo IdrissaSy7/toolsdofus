@@ -7,7 +7,12 @@
 
 @font-face {
   font-family: font-1;
-  src: url(../styles/fonts/Ysabeau-VariableFont_wght.ttf);
+  src: url(../styles/fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+  font-family: font-2;
+  src: url(../styles/fonts/Ubuntu/Ubuntu-Light.ttf);
 }
 
 $color-1: #161719;

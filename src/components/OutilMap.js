@@ -20,7 +20,7 @@ const OutilMap = () => {
       zoomSnap: 0.5,
     };
 
-    const zoom = 1; // Zoom initial
+    const zoom = 2.5; // Zoom initial
     const lat = -500; // Point central de la map
     const lng = 650; // Point central de la map
 
@@ -106,35 +106,62 @@ const OutilMap = () => {
         navigator.clipboard.writeText(textToCopy);
         console.log(" Position copiée:", textToCopy);
         setCopiedPosition({ x, y });
-        // Cache l'indicateur de position après 1,5 secondes
+        // Cache l'indicateur de position
         setTimeout(() => {
           setCopiedPosition(null);
-        }, 1500);
+        }, 20000);
       } catch (err) {
         console.error("Erreur lors de la copie:", err);
       }
     };
 
+    // Compte les occurrences de chaque ressource dans un tableau
+    function countResources(resources) {
+      const resourceCounts = {};
+      resources.forEach((resource) => {
+        resourceCounts[resource.name] =
+          (resourceCounts[resource.name] || 0) + 1;
+      });
+      return resourceCounts;
+    }
+
     // Pop-up au clic sur une position
     const popup = (e) => {
+      closeOtherLayers();
       const coords = leafletCoordsToDofusCoords(e.latlng.lat, e.latlng.lng);
       const x = Math.floor(coords[0]);
       const y = Math.floor(coords[1]);
 
+      // Affiche les ressources aux coordonnées spécifiées dans la console
+      const resourcesAtPosition = getResourcesAtPosition(x, y);
+
       // Convertie les coordonnées Dofus en Leaflet
       const latlng = dofusCoordsToLeafletCoords(x, y);
 
+      // Compte les occurrences de chaque ressource et formate la chaîne
+      const resourceCounts = countResources(resourcesAtPosition);
+      console.log(resourcesAtPosition.length);
+      const resourceList = Object.entries(resourceCounts)
+        .map(([resourceName, count]) => `${count} x ${resourceName}`)
+        .join("<br>");
+      console.log(resourceList);
+
       var popupContent = `
-        <div class="popupContent">
-          <p>
-          <img src="./img/dragodinde.png" alt="image dragodinde" />
-          Voyager vers 
-            <span onclick="copyCoordinates('${x}', '${y}')">
-              <span> [${x}, ${y}]</span>
+      <div class="popupContent">
+        <p>
+          <span>
+                  <img src="./img/dragodinde.png" alt="image dragodinde" /> Voyager vers 
+              <span onclick="copyCoordinates('${x}', '${y}')">
+              <span class="coords"> [${x}, ${y}]</span>
             </span>
-          </p>
-        </div>
-      `;
+            </span>
+
+            <span class="resource-list">
+           ${resourceList ? "<br>" + resourceList : ""}
+            </span>
+        </p>
+      </div>
+  `;
 
       var popupInstance = L.popup()
         .setLatLng(latlng)
@@ -143,7 +170,7 @@ const OutilMap = () => {
 
       setTimeout(() => {
         popupInstance.remove();
-      }, 3000);
+      }, 40000);
     };
 
     // Groupe les ressources qui sont au meme point
@@ -160,6 +187,33 @@ const OutilMap = () => {
       });
 
       return Object.values(grouped);
+    }
+
+    // Vérifie si les coordonées sont dans la limite de carte
+    function isCoordinateInView(coordinate) {
+      const bounds = map.getBounds();
+      const latLng = dofusCoordsToLeafletCoords(coordinate[0], coordinate[1]);
+      return bounds.contains(latLng);
+    }
+
+    // Renvoie les ressources sur chaque position
+    function getResourcesAtPosition(x, y) {
+      const resourcesAtPosition = [];
+      for (const job in jobs) {
+        const jobResources = jobs[job];
+        jobResources.forEach((resource) => {
+          resource.data.forEach((point) => {
+            if (point[0] === x && point[1] === y) {
+              const groupName = `${resource.name}`;
+              const layerGroup = overlayMaps[job][groupName];
+              if (map.hasLayer(layerGroup) && isCoordinateInView(point)) {
+                resourcesAtPosition.push(resource);
+              }
+            }
+          });
+        });
+      }
+      return resourcesAtPosition;
     }
 
     // Crée un indicateur de ressources
@@ -189,6 +243,31 @@ const OutilMap = () => {
         const marker = L.marker(coordinates, { icon: icon });
         layerGroup.addLayer(marker);
       });
+    }
+
+    function updateResourceMarkers() {
+      for (const job in overlayMaps) {
+        for (const groupName in overlayMaps[job]) {
+          const layerGroup = overlayMaps[job][groupName];
+          if (map.hasLayer(layerGroup)) {
+            layerGroup.clearLayers();
+            const jobResource = jobs[job].find(
+              (resource) => resource.name === groupName
+            );
+            if (jobResource) {
+              const visibleResourcePoints =
+                jobResource.data.filter(isCoordinateInView);
+              const resourceGroup = groupAndCountPoints(visibleResourcePoints);
+              addResourceMarkers(
+                resourceGroup,
+                jobResource.name,
+                jobResource.imgUrl,
+                layerGroup
+              );
+            }
+          }
+        }
+      }
     }
 
     // Ajoute les groupes de métiers à overlayMaps
@@ -273,11 +352,12 @@ const OutilMap = () => {
     });
 
     map.on("mousemove", mouseMoveOnMap);
-    map.on("zoomend", zoomChangeOnMap);
-    map.on("click", popup);
-    map.on("click", () => {
-      closeOtherLayers();
+    map.on("moveend", updateResourceMarkers);
+    map.on("zoomend", () => {
+      zoomChangeOnMap();
+      updateResourceMarkers();
     });
+    map.on("click", popup);
 
     return () => {
       if (map) {

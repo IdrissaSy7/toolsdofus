@@ -10,7 +10,6 @@
   background-color: $color-1;
   color: $color-3;
   width: 90px;
-  height: 50px;
   border-radius: 25px;
   text-align: center;
   font-size: 1.2rem;
@@ -21,6 +20,7 @@
   border: 2px solid $color-1;
   border-radius: 5px;
 }
+
 #position-indicator {
   position: absolute;
   z-index: 9999;
@@ -34,6 +34,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "font-2", sans-serif;
 
   & img {
     width: auto;
@@ -49,39 +50,40 @@
   grid-template-columns: 80% 20%;
   margin: 0 !important;
   margin-top: -4px !important;
-  margin-left: -1px !important;
+  margin-left: -4px !important;
   width: initial !important;
   height: initial !important;
 
   & img {
     width: auto;
-    height: var(--icon-height, 15px);
+    height: var(--icon-height, 30px);
+    filter: drop-shadow(0 0 3px $color-1);
   }
 
   & span {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: $color-3;
-    text-shadow: 0 0 3px $color-1;
+    text-shadow: 1px 1px $color-1;
     font-weight: bolder;
     position: relative;
     top: 6px;
-    left: -3px;
+    left: -6px;
   }
 }
 
 .leaflet-popup-content-wrapper {
-  background: $color-1;
-  color: $color-3;
+  background: transparent;
   font-size: 1rem;
-  font-family: "font-1", sans-serif;
-  width: 300px;
+  font-family: "font-2", sans-serif;
   height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 30px;
 
   .leaflet-popup-content {
     margin: 0;
     width: 300px;
     height: 50px;
-    min-height: 0;
   }
 }
 
@@ -96,24 +98,37 @@
   grid-template-rows: 1fr;
   width: 100%;
   height: 100%;
+  color: $color-3;
 
   p {
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: $color-1;
+    border-radius: 10px;
   }
 
-  span {
+  .coords {
     margin-left: 5px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    background: $color-1;
     color: $color-8;
     cursor: pointer;
+    font-family: "font-1", sans-serif;
   }
 
   & img {
     width: auto;
     height: 30px;
+    position: relative;
+    top: 8px;
+  }
+
+  .resource-list {
+    margin-bottom: 15px;
   }
 }
 
@@ -529,6 +544,7 @@
       border: 3px solid $color-1;
       left: -82px;
       top: -20px;
+      z-index: 9999;
     }
   }
 }

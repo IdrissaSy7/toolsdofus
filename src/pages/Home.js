@@ -21,7 +21,7 @@ const Home = () => {
               </a>
               . Vous pourrez trouver ici une Map interactive contenant la
               position de toutes les ressources du jeu et un Outil d'Achat
-              Revente permettant de garder un oeil sur ses ventes
+              Revente permettant de garder un oeil sur ses ventes.
             </p>
           </div>
         </div>
