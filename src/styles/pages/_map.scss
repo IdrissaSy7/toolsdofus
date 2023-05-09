@@ -50,13 +50,13 @@
   grid-template-columns: 80% 20%;
   margin: 0 !important;
   margin-top: -4px !important;
-  margin-left: -4px !important;
+  margin-left: 2px !important;
   width: initial !important;
   height: initial !important;
 
   & img {
     width: auto;
-    height: var(--icon-height, 30px);
+    height: var(--icon-height, 24px);
     filter: drop-shadow(0 0 3px $color-1);
   }
 

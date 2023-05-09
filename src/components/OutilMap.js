@@ -17,10 +17,9 @@ const OutilMap = () => {
       attributionControl: false,
       ratio: 7,
       zoomControl: false,
-      zoomSnap: 0.5,
     };
 
-    const zoom = 2.5; // Zoom initial
+    const zoom = 2; // Zoom initial
     const lat = -500; // Point central de la map
     const lng = 650; // Point central de la map
 
@@ -69,11 +68,14 @@ const OutilMap = () => {
 
       // Mets à jour la taille de l'image en fonction du niveau de zoom
       const zoom = map.getZoom();
-      const iconHeight = 10 * Math.pow(2.1, zoom - 1);
+      const iconHeight = 12 * Math.pow(2, zoom - 1);
       document.documentElement.style.setProperty(
         "--icon-height",
         `${iconHeight}px`
       );
+
+      // Met à jour les marqueurs en fonction du niveau de zoom
+      updateResourceMarkers();
     }
 
     // Regle la taille du rectangle
@@ -109,7 +111,7 @@ const OutilMap = () => {
         // Cache l'indicateur de position
         setTimeout(() => {
           setCopiedPosition(null);
-        }, 20000);
+        }, 2000);
       } catch (err) {
         console.error("Erreur lors de la copie:", err);
       }
@@ -170,7 +172,7 @@ const OutilMap = () => {
 
       setTimeout(() => {
         popupInstance.remove();
-      }, 40000);
+      }, 4000);
     };
 
     // Groupe les ressources qui sont au meme point
@@ -217,12 +219,14 @@ const OutilMap = () => {
     }
 
     // Crée un indicateur de ressources
-    function createNumberedIcon(number, imgUrl) {
+    function createNumberedIcon(number, imgUrl, zoom) {
       return L.divIcon({
         className: "numbered-icon",
         html: `
                 <img src="${imgUrl}" alt="Resource icon" />
-                <span>${number}</span>
+                <span style="display: ${
+                  zoom === 3 ? "inline" : "none"
+                }">${number}</span>
               `,
       });
     }
@@ -239,7 +243,7 @@ const OutilMap = () => {
           group.coordinates[0],
           group.coordinates[1]
         );
-        const icon = createNumberedIcon(group.count, imgUrl);
+        const icon = createNumberedIcon(group.count, imgUrl, map.getZoom());
         const marker = L.marker(coordinates, { icon: icon });
         layerGroup.addLayer(marker);
       });
