@@ -1,535 +1,469 @@
-import PosRessources from "./PositionsRessources";
+import Ortie from "../JSON/alchimiste.json";
+import Sauge from "../JSON/alchimiste.json";
+import Trefle from "../JSON/alchimiste.json";
+import Menthe from "../JSON/alchimiste.json";
+import Orchidee from "../JSON/alchimiste.json";
+import Edelweiss from "../JSON/alchimiste.json";
+import Pandouille from "../JSON/alchimiste.json";
+import Ginseng from "../JSON/alchimiste.json";
+import Belladone from "../JSON/alchimiste.json";
+import Mandragore from "../JSON/alchimiste.json";
+import PerceNeige from "../JSON/alchimiste.json";
 
-// Ressources alchimiste
-const Ortie = PosRessources.Ortie;
-const Sauge = PosRessources.Sauge;
-const Trefle = PosRessources.Trefle;
-const Menthe = PosRessources.Menthe;
-const Orchidee = PosRessources.Orchidee;
-const Edelweiss = PosRessources.Edelweiss;
-const Pandouille = PosRessources.Pandouille;
-const Ginseng = PosRessources.Ginseng;
-const Belladone = PosRessources.Belladone;
-const Mandragore = PosRessources.Mandragore;
-const PerceNeige = PosRessources.PerceNeige;
-const Salikrone = PosRessources.Salikrone;
-const TuileEnPapier = PosRessources.TuileEnPapier;
+import Frene from "../JSON/bucheron.json";
+import Chataigner from "../JSON/bucheron.json";
+import Noyer from "../JSON/bucheron.json";
+import Chene from "../JSON/bucheron.json";
+import Bombu from "../JSON/bucheron.json";
+import Erable from "../JSON/bucheron.json";
+import Oliviolet from "../JSON/bucheron.json";
+import Pin from "../JSON/bucheron.json";
+import If from "../JSON/bucheron.json";
+import Bambou from "../JSON/bucheron.json";
+import Merisier from "../JSON/bucheron.json";
+import Noisetier from "../JSON/bucheron.json";
+import Ebene from "../JSON/bucheron.json";
+import Kaliptus from "../JSON/bucheron.json";
+import Charme from "../JSON/bucheron.json";
+import BambouSombre from "../JSON/bucheron.json";
+import Orme from "../JSON/bucheron.json";
+import BambouSacre from "../JSON/bucheron.json";
+import Tremble from "../JSON/bucheron.json";
 
-// Ressources bucheron
-const Frene = PosRessources.Frene;
-const Chataigner = PosRessources.Chataigner;
-const Noyer = PosRessources.Noyer;
-const Chene = PosRessources.Chene;
-const Bombu = PosRessources.Bombu;
-const Erable = PosRessources.Erable;
-const Oliviolet = PosRessources.Oliviolet;
-const Pin = PosRessources.Pin;
-const If = PosRessources.If;
-const Bambou = PosRessources.Bambou;
-const Merisier = PosRessources.Merisier;
-const Noisetier = PosRessources.Noisetier;
-const Ebene = PosRessources.Ebene;
-const Kaliptus = PosRessources.Kaliptus;
-const Charme = PosRessources.Charme;
-const BambouSombre = PosRessources.BambouSombre;
-const Orme = PosRessources.Orme;
-const BambouSacre = PosRessources.BambouSacre;
-const Tremble = PosRessources.Tremble;
-const Aquajou = PosRessources.Aquajou;
+import Ble from "../JSON/paysan.json";
+import Orge from "../JSON/paysan.json";
+import Avoine from "../JSON/paysan.json";
+import Houblon from "../JSON/paysan.json";
+import Lin from "../JSON/paysan.json";
+import Seigle from "../JSON/paysan.json";
+import Riz from "../JSON/paysan.json";
+import Malt from "../JSON/paysan.json";
+import Chanvre from "../JSON/paysan.json";
+import Mais from "../JSON/paysan.json";
+import Millet from "../JSON/paysan.json";
+import Frostiz from "../JSON/paysan.json";
 
-// Ressources paysan
-const Ble = PosRessources.Ble;
-const Orge = PosRessources.Orge;
-const Avoine = PosRessources.Avoine;
-const Houblon = PosRessources.Houblon;
-const Lin = PosRessources.Lin;
-const Seigle = PosRessources.Seigle;
-const Riz = PosRessources.Riz;
-const Malt = PosRessources.Malt;
-const Chanvre = PosRessources.Chanvre;
-const Mais = PosRessources.Mais;
-const Millet = PosRessources.Millet;
-const Frostiz = PosRessources.Frostiz;
-const Quisnoa = PosRessources.Quisnoa;
+import Fer from "../JSON/mineur.json";
+import Cuivre from "../JSON/mineur.json";
+import Bronze from "../JSON/mineur.json";
+import Kobalte from "../JSON/mineur.json";
+import Manganese from "../JSON/mineur.json";
+import Etain from "../JSON/mineur.json";
+import Silicate from "../JSON/mineur.json";
+import Argent from "../JSON/mineur.json";
+import Bauxite from "../JSON/mineur.json";
+import Or from "../JSON/mineur.json";
+import Dolomite from "../JSON/mineur.json";
+import Obsidienne from "../JSON/mineur.json";
 
-// Ressources mineur
-const Fer = PosRessources.Fer;
-const Cuivre = PosRessources.Cuivre;
-const Bronze = PosRessources.Bronze;
-const Kobalte = PosRessources.Kobalte;
-const Manganese = PosRessources.Manganese;
-const Etain = PosRessources.Etain;
-const Silicate = PosRessources.Silicate;
-const Argent = PosRessources.Argent;
-const Bauxite = PosRessources.Bauxite;
-const Or = PosRessources.Or;
-const Dolomite = PosRessources.Dolomite;
-const CendrePierre = PosRessources.CendrePierre;
-const Obsidienne = PosRessources.Obsidienne;
-const Ecume = PosRessources.Ecume;
-const CristalPliable = PosRessources.CristalPliable;
-const CristalLiquide = PosRessources.CristalLiquide;
-
-// Ressources pecheur
-const Goujon = PosRessources.Goujon;
-const Greuvette = PosRessources.Greuvette;
-const Truite = PosRessources.Truite;
-const Crabe = PosRessources.Crabe;
-const PoissonChaton = PosRessources.PoissonChaton;
-const PoissonPane = PosRessources.PoissonPane;
-const Carpe = PosRessources.Carpe;
-const Sardine = PosRessources.Sardine;
-const Brochet = PosRessources.Brochet;
-const Kralamoure = PosRessources.Kralamoure;
-const Anguille = PosRessources.Anguille;
-const Dorade = PosRessources.Dorade;
-const Perche = PosRessources.Perche;
-const Raie = PosRessources.Raie;
-const Lotte = PosRessources.Lotte;
-const Requin = PosRessources.Requin;
-const Bar = PosRessources.Bar;
-const Morue = PosRessources.Morue;
-const Tanche = PosRessources.Tanche;
-const Espadon = PosRessources.Espadon;
-const Poisskaille = PosRessources.Poisskaille;
-const Patelle = PosRessources.Patelle;
-const Pichon = PosRessources.Pichon;
+import Goujon from "../JSON/pecheur.json";
+import Greuvette from "../JSON/pecheur.json";
+import Truite from "../JSON/pecheur.json";
+import Crabe from "../JSON/pecheur.json";
+import PoissonChaton from "../JSON/pecheur.json";
+import PoissonPane from "../JSON/pecheur.json";
+import Carpe from "../JSON/pecheur.json";
+import Sardine from "../JSON/pecheur.json";
+import Brochet from "../JSON/pecheur.json";
+import Kralamoure from "../JSON/pecheur.json";
+import Anguille from "../JSON/pecheur.json";
+import Dorade from "../JSON/pecheur.json";
+import Perche from "../JSON/pecheur.json";
+import Raie from "../JSON/pecheur.json";
+import Lotte from "../JSON/pecheur.json";
+import Requin from "../JSON/pecheur.json";
+import Bar from "../JSON/pecheur.json";
+import Morue from "../JSON/pecheur.json";
+import Tanche from "../JSON/pecheur.json";
+import Espadon from "../JSON/pecheur.json";
+import Poisskaille from "../JSON/pecheur.json";
 
 // Data ressources
 const jobs = {
   Alchimiste: [
     {
+      data: Ortie.Ortie,
       name: "Ortie",
-      data: Ortie,
       imgUrl: "./Ressources/Alchimiste/Ortie.png",
     },
     {
       name: "Sauge",
-      data: Sauge,
+      data: Sauge.Sauge,
       imgUrl: "./Ressources/Alchimiste/Sauge.png",
     },
     {
       name: "Trefle à 5 feuilles",
-      data: Trefle,
+      data: Trefle.Trefle,
       imgUrl: "./Ressources/Alchimiste/Trefle.png",
     },
     {
       name: "Menthe Sauvage",
-      data: Menthe,
+      data: Menthe.Menthe,
       imgUrl: "./Ressources/Alchimiste/Menthe.png",
     },
     {
       name: "Orchidee Freyesque",
-      data: Orchidee,
+      data: Orchidee.Orchidee,
       imgUrl: "./Ressources/Alchimiste/Orchidee.png",
     },
     {
       name: "Edelweiss",
-      data: Edelweiss,
+      data: Edelweiss.Edelweiss,
       imgUrl: "./Ressources/Alchimiste/Edelweiss.png",
     },
     {
       name: "Graine de Pandouille",
-      data: Pandouille,
+      data: Pandouille.Pandouille,
       imgUrl: "./Ressources/Alchimiste/Pandouille.png",
     },
     {
       name: "Ginseng",
-      data: Ginseng,
+      data: Ginseng.Ginseng,
       imgUrl: "./Ressources/Alchimiste/Ginseng.png",
     },
     {
       name: "Belladone",
-      data: Belladone,
+      data: Belladone.Belladone,
       imgUrl: "./Ressources/Alchimiste/Belladone.png",
     },
     {
       name: "Mandragore",
-      data: Mandragore,
+      data: Mandragore.Mandragore,
       imgUrl: "./Ressources/Alchimiste/Mandragore.png",
     },
     {
+      data: PerceNeige.PerceNeige,
       name: "Perce Neige",
-      data: PerceNeige,
       imgUrl: "./Ressources/Alchimiste/PerceNeige.png",
-    },
-    {
-      name: "Salikrone",
-      data: Salikrone,
-      imgUrl: "./Ressources/Alchimiste/Salikrone.png",
-    },
-    {
-      name: "Tuile en Papier",
-      data: TuileEnPapier,
-      imgUrl: "./Ressources/Alchimiste/Tuile.png",
     },
   ],
   Bucheron: [
     {
       name: "Bois de Frene",
-      data: Frene,
+      data: Frene.Frene,
       imgUrl: "./Ressources/Bucheron/Frene.png",
     },
     {
       name: "Bois de Chataigner",
-      data: Chataigner,
+      data: Chataigner.Chataigner,
       imgUrl: "./Ressources/Bucheron/Chataigner.png",
     },
     {
       name: "Bois de Noyer",
-      data: Noyer,
+      data: Noyer.Noyer,
       imgUrl: "./Ressources/Bucheron/Noyer.png",
     },
     {
       name: "Bois de Chene",
-      data: Chene,
+      data: Chene.Chene,
       imgUrl: "./Ressources/Bucheron/Chene.png",
     },
     {
       name: "Bois de Bombu",
-      data: Bombu,
+      data: Bombu.Bombu,
       imgUrl: "./Ressources/Bucheron/Bombu.png",
     },
     {
       name: "Bois d'Erable",
-      data: Erable,
+      data: Erable.Erable,
       imgUrl: "./Ressources/Bucheron/Erable.png",
     },
     {
       name: "Bois d'Oliviolet",
-      data: Oliviolet,
+      data: Oliviolet.Oliviolet,
       imgUrl: "./Ressources/Bucheron/Oliviolet.png",
     },
     {
       name: "Bois de Pin",
-      data: Pin,
+      data: Pin.Pin,
       imgUrl: "./Ressources/Bucheron/Pin.png",
     },
     {
       name: "Bois d'If",
-      data: If,
+      data: If.If,
       imgUrl: "./Ressources/Bucheron/If.png",
     },
     {
       name: "Bois de Bambou",
-      data: Bambou,
+      data: Bambou.Bambou,
       imgUrl: "./Ressources/Bucheron/Bambou.png",
     },
     {
       name: "Bois de Merisier",
-      data: Merisier,
+      data: Merisier.Merisier,
       imgUrl: "./Ressources/Bucheron/Merisier.png",
     },
     {
       name: "Bois de Noisetier",
-      data: Noisetier,
+      data: Noisetier.Noisetier,
       imgUrl: "./Ressources/Bucheron/Noisetier.png",
     },
     {
       name: "Bois d'Ebene",
-      data: Ebene,
+      data: Ebene.Ebene,
       imgUrl: "./Ressources/Bucheron/Ebene.png",
     },
     {
       name: "Bois de Kaliptus",
-      data: Kaliptus,
+      data: Kaliptus.Kaliptus,
       imgUrl: "./Ressources/Bucheron/Kaliptus.png",
     },
     {
       name: "Bois de Charme",
-      data: Charme,
+      data: Charme.Charme,
       imgUrl: "./Ressources/Bucheron/Charme.png",
     },
     {
       name: "Bois de Bambou Sombre",
-      data: BambouSombre,
+      data: BambouSombre.BambouSombre,
       imgUrl: "./Ressources/Bucheron/BambouSombre.png",
     },
     {
       name: "Bois d'Orme",
-      data: Orme,
+      data: Orme.Orme,
       imgUrl: "./Ressources/Bucheron/Orme.png",
     },
     {
       name: "Bois de Bambou Sacre",
-      data: BambouSacre,
+      data: BambouSacre.BambouSacre,
       imgUrl: "./Ressources/Bucheron/BambouSacre.png",
     },
     {
       name: "Bois de Tremble",
-      data: Tremble,
+      data: Tremble.Tremble,
       imgUrl: "./Ressources/Bucheron/Tremble.png",
-    },
-    {
-      name: "Bois d'Aquajou",
-      data: Aquajou,
-      imgUrl: "./Ressources/Bucheron/Aquajou.png",
     },
   ],
   Paysan: [
     {
       name: "Ble",
-      data: Ble,
+      data: Ble.Ble,
       imgUrl: "./Ressources/Paysan/Ble.png",
     },
     {
       name: "Orge",
-      data: Orge,
+      data: Orge.Orge,
       imgUrl: "./Ressources/Paysan/Orge.png",
     },
     {
       name: "Avoine",
-      data: Avoine,
+      data: Avoine.Avoine,
       imgUrl: "./Ressources/Paysan/Avoine.png",
     },
     {
       name: "Houblon",
-      data: Houblon,
+      data: Houblon.Houblon,
       imgUrl: "./Ressources/Paysan/Houblon.png",
     },
     {
       name: "Lin",
-      data: Lin,
+      data: Lin.Lin,
       imgUrl: "./Ressources/Paysan/Lin.png",
     },
     {
       name: "Seigle",
-      data: Seigle,
+      data: Seigle.Seigle,
       imgUrl: "./Ressources/Paysan/Seigle.png",
     },
     {
       name: "Riz",
-      data: Riz,
+      data: Riz.Riz,
       imgUrl: "./Ressources/Paysan/Riz.png",
     },
     {
       name: "Malt",
-      data: Malt,
+      data: Malt.Malt,
       imgUrl: "./Ressources/Paysan/Malt.png",
     },
     {
       name: "Chanvre",
-      data: Chanvre,
+      data: Chanvre.Chanvre,
       imgUrl: "./Ressources/Paysan/Chanvre.png",
     },
     {
       name: "Mais",
-      data: Mais,
+      data: Mais.Mais,
       imgUrl: "./Ressources/Paysan/Mais.png",
     },
     {
       name: "Millet",
-      data: Millet,
+      data: Millet.Millet,
       imgUrl: "./Ressources/Paysan/Millet.png",
     },
     {
       name: "Frostiz",
-      data: Frostiz,
+      data: Frostiz.Frostiz,
       imgUrl: "./Ressources/Paysan/Frostiz.png",
-    },
-    {
-      name: "Quisnoa",
-      data: Quisnoa,
-      imgUrl: "./Ressources/Paysan/Quisnoa.png",
     },
   ],
   Mineur: [
     {
       name: "Fer",
-      data: Fer,
+      data: Fer.Fer,
       imgUrl: "./Ressources/Mineur/Fer.png",
     },
     {
       name: "Cuivre",
-      data: Cuivre,
+      data: Cuivre.Cuivre,
       imgUrl: "./Ressources/Mineur/Cuivre.png",
     },
     {
       name: "Bronze",
-      data: Bronze,
+      data: Bronze.Bronze,
       imgUrl: "./Ressources/Mineur/Bronze.png",
     },
     {
       name: "Kobalte",
-      data: Kobalte,
+      data: Kobalte.Kobalte,
       imgUrl: "./Ressources/Mineur/Kobalte.png",
     },
     {
       name: "Manganese",
-      data: Manganese,
+      data: Manganese.Manganese,
       imgUrl: "./Ressources/Mineur/Manganese.png",
     },
     {
       name: "Etain",
-      data: Etain,
+      data: Etain.Etain,
       imgUrl: "./Ressources/Mineur/Etain.png",
     },
     {
       name: "Silicate",
-      data: Silicate,
+      data: Silicate.Silicate,
       imgUrl: "./Ressources/Mineur/Silicate.png",
     },
     {
       name: "Argent",
-      data: Argent,
+      data: Argent.Argent,
       imgUrl: "./Ressources/Mineur/Argent.png",
     },
     {
       name: "Bauxite",
-      data: Bauxite,
+      data: Bauxite.Bauxite,
       imgUrl: "./Ressources/Mineur/Bauxite.png",
     },
     {
       name: "Or",
-      data: Or,
+      data: Or.Or,
       imgUrl: "./Ressources/Mineur/Or.png",
     },
     {
       name: "Dolomite",
-      data: Dolomite,
+      data: Dolomite.Dolomite,
       imgUrl: "./Ressources/Mineur/Dolomite.png",
     },
-    {
-      name: "Cendrepierre",
-      data: CendrePierre,
-      imgUrl: "./Ressources/Mineur/CendrePierre.png",
-    },
+
     {
       name: "Obsidienne",
-      data: Obsidienne,
+      data: Obsidienne.Obsidienne,
       imgUrl: "./Ressources/Mineur/Obsidienne.png",
-    },
-    {
-      name: "Ecume",
-      data: Ecume,
-      imgUrl: "./Ressources/Mineur/Ecume.png",
-    },
-    {
-      name: "Cristal Pliable",
-      data: CristalPliable,
-      imgUrl: "./Ressources/Mineur/CristalPliable.png",
-    },
-    {
-      name: "Cristal Liquide",
-      data: CristalLiquide,
-      imgUrl: "./Ressources/Mineur/CristalLiquide.png",
     },
   ],
   Pecheur: [
     {
       name: "Goujon",
-      data: Goujon,
+      data: Goujon.Goujon,
       imgUrl: "./Ressources/Pecheur/Goujon.png",
     },
     {
       name: "Greuvette",
-      data: Greuvette,
+      data: Greuvette.Greuvette,
       imgUrl: "./Ressources/Pecheur/Greuvette.png",
     },
     {
       name: "Truite",
-      data: Truite,
+      data: Truite.Truite,
       imgUrl: "./Ressources/Pecheur/Truite.png",
     },
     {
       name: "Crabe",
-      data: Crabe,
+      data: Crabe.Crabe,
       imgUrl: "./Ressources/Pecheur/Crabe.png",
     },
     {
       name: "Poisson Chaton",
-      data: PoissonChaton,
+      data: PoissonChaton.PoissonChaton,
       imgUrl: "./Ressources/Pecheur/PoissonChaton.png",
     },
     {
       name: "Poisson Pane",
-      data: PoissonPane,
+      data: PoissonPane.PoissonPane,
       imgUrl: "./Ressources/Pecheur/PoissonPane.png",
     },
     {
       name: "Carpe",
-      data: Carpe,
+      data: Carpe.Carpe,
       imgUrl: "./Ressources/Pecheur/Carpe.png",
     },
     {
       name: "Sardine",
-      data: Sardine,
+      data: Sardine.Sardine,
       imgUrl: "./Ressources/Pecheur/Sardine.png",
     },
     {
       name: "Brochet",
-      data: Brochet,
+      data: Brochet.Brochet,
       imgUrl: "./Ressources/Pecheur/Brochet.png",
     },
     {
       name: "Kralamoure",
-      data: Kralamoure,
+      data: Kralamoure.Kralamoure,
       imgUrl: "./Ressources/Pecheur/Kralamoure.png",
     },
     {
       name: "Anguille",
-      data: Anguille,
+      data: Anguille.Anguille,
       imgUrl: "./Ressources/Pecheur/Anguille.png",
     },
     {
       name: "Dorade",
-      data: Dorade,
+      data: Dorade.Dorade,
       imgUrl: "./Ressources/Pecheur/Dorade.png",
     },
     {
       name: "Perche",
-      data: Perche,
+      data: Perche.Perche,
       imgUrl: "./Ressources/Pecheur/Perche.png",
     },
     {
       name: "Raie",
-      data: Raie,
+      data: Raie.Raie,
       imgUrl: "./Ressources/Pecheur/Raie.png",
     },
     {
       name: "Lotte",
-      data: Lotte,
+      data: Lotte.Lotte,
       imgUrl: "./Ressources/Pecheur/Lotte.png",
     },
     {
       name: "Requin",
-      data: Requin,
+      data: Requin.Requin,
       imgUrl: "./Ressources/Pecheur/Requin.png",
     },
     {
       name: "Bar",
-      data: Bar,
+      data: Bar.Bar,
       imgUrl: "./Ressources/Pecheur/Bar.png",
     },
     {
       name: "Morue",
-      data: Morue,
+      data: Morue.Morue,
       imgUrl: "./Ressources/Pecheur/Morue.png",
     },
     {
       name: "Tanche",
-      data: Tanche,
+      data: Tanche.Tanche,
       imgUrl: "./Ressources/Pecheur/Tanche.png",
     },
     {
       name: "Espadon",
-      data: Espadon,
+      data: Espadon.Espadon,
       imgUrl: "./Ressources/Pecheur/Espadon.png",
     },
     {
       name: "Poisskaille",
-      data: Poisskaille,
+      data: Poisskaille.Poisskaille,
       imgUrl: "./Ressources/Pecheur/Poisskaille.png",
-    },
-    {
-      name: "Patelle",
-      data: Patelle,
-      imgUrl: "./Ressources/Pecheur/Patelle.png",
-    },
-    {
-      name: "Pichon",
-      data: Pichon,
-      imgUrl: "./Ressources/Pecheur/Pichon.png",
     },
   ],
 };

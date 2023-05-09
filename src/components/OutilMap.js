@@ -217,6 +217,8 @@ const OutilMap = () => {
       });
     }
 
+    console.log(jobs);
+
     // Fonction pour fermer tous les layers sauf celui qui est passé en argument
     function closeOtherLayers(excludeJob) {
       Object.keys(overlayMaps).forEach((job) => {

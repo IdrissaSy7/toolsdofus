@@ -188,14 +188,6 @@
       background: url("../../../public/Ressources/Alchimiste/PerceNeige.png")
         center/cover;
     }
-    & label:nth-child(12) {
-      background: url("../../../public/Ressources/Alchimiste/Salikrone.png")
-        center/cover;
-    }
-    & label:nth-child(13) {
-      background: url("../../../public/Ressources/Alchimiste/Tuile.png")
-        center/cover;
-    }
   }
 
   &[data-job="bucheron"] {
@@ -279,10 +271,6 @@
     }
     & label:nth-child(19) {
       background: url("../../../public/Ressources/Bucheron/Tremble.png")
-        center/cover;
-    }
-    & label:nth-child(20) {
-      background: url("../../../public/Ressources/Bucheron/Aquajou.png")
         center/cover;
     }
   }
@@ -394,23 +382,7 @@
         center/cover;
     }
     & label:nth-child(12) {
-      background: url("../../../public/Ressources/Mineur/Cendrepierre.png")
-        center/cover;
-    }
-    & label:nth-child(13) {
       background: url("../../../public/Ressources/Mineur/Obsidienne.png")
-        center/cover;
-    }
-    & label:nth-child(14) {
-      background: url("../../../public/Ressources/Mineur/Ecume.png")
-        center/cover;
-    }
-    & label:nth-child(15) {
-      background: url("../../../public/Ressources/Mineur/CristalPliable.png")
-        center/cover;
-    }
-    & label:nth-child(16) {
-      background: url("../../../public/Ressources/Mineur/CristalLiquide.png")
         center/cover;
     }
   }
@@ -504,14 +476,6 @@
     }
     & label:nth-child(21) {
       background: url("../../../public/Ressources/Pecheur/Poisskaille.png")
-        center/cover;
-    }
-    & label:nth-child(22) {
-      background: url("../../../public/Ressources/Pecheur/Patelle.png")
-        center/cover;
-    }
-    & label:nth-child(23) {
-      background: url("../../../public/Ressources/Pecheur/Pichon.png")
         center/cover;
     }
   }
