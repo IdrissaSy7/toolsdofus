@@ -54,10 +54,16 @@ const OutilMap = () => {
       let y = Math.floor(coords[1]);
       var divCoordinates = document.getElementById("position");
       divCoordinates.innerHTML = x + ", " + y;
-      divCoordinates.style.top = e.containerPoint.y + 50 + "px";
-      divCoordinates.style.left = e.containerPoint.x + 50 + "px";
+      divCoordinates.style.top = e.containerPoint.y + 20 + "px";
+      divCoordinates.style.left = e.containerPoint.x + 40 + "px";
       divCoordinates.style.display = "block";
       objOnMap.rectangle.setLatLng(dofusCoordsToLeafletCoords(x, y));
+    }
+
+    // Fonction qui cache la div quand la souris est en dehors de la map
+    function mouseOutOfMap(e) {
+      var divCoordinates = document.getElementById("position");
+      divCoordinates.style.display = "none";
     }
 
     // Met a jour le rectangle en fonction du zoom
@@ -106,7 +112,6 @@ const OutilMap = () => {
 
       try {
         navigator.clipboard.writeText(textToCopy);
-        console.log(" Position copiée:", textToCopy);
         setCopiedPosition({ x, y });
         // Cache l'indicateur de position
         setTimeout(() => {
@@ -142,11 +147,9 @@ const OutilMap = () => {
 
       // Compte les occurrences de chaque ressource et formate la chaîne
       const resourceCounts = countResources(resourcesAtPosition);
-      console.log(resourcesAtPosition.length);
       const resourceList = Object.entries(resourceCounts)
         .map(([resourceName, count]) => `${count} x ${resourceName}`)
         .join("<br>");
-      console.log(resourceList);
 
       var popupContent = `
       <div class="popupContent">
@@ -300,8 +303,6 @@ const OutilMap = () => {
       });
     }
 
-    console.log(jobs);
-
     // Fonction pour fermer tous les layers sauf celui qui est passé en argument
     function closeOtherLayers(excludeJob) {
       Object.keys(overlayMaps).forEach((job) => {
@@ -311,8 +312,11 @@ const OutilMap = () => {
           );
           const resourcesContainer =
             controlContainer.querySelector(".job-resources");
+          const title = controlContainer;
+
           if (resourcesContainer.classList.contains("open")) {
             resourcesContainer.classList.remove("open");
+            title.classList.remove("active");
           }
         }
       });
@@ -348,6 +352,7 @@ const OutilMap = () => {
 
       title.addEventListener("click", () => {
         const isOpen = resourcesContainer.classList.toggle("open");
+        title.classList.toggle("active");
 
         if (isOpen) {
           closeOtherLayers(job);
@@ -356,6 +361,7 @@ const OutilMap = () => {
     });
 
     map.on("mousemove", mouseMoveOnMap);
+    map.on("mouseout", mouseOutOfMap);
     map.on("moveend", updateResourceMarkers);
     map.on("zoomend", () => {
       zoomChangeOnMap();

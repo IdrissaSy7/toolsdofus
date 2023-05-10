@@ -1,19 +1,21 @@
 #map {
   width: 100vw;
   height: 100vh;
+  background: $color-1;
 }
 
 #position {
-  position: absolute;
   z-index: 999;
   padding: 10px;
   background-color: $color-1;
   color: $color-3;
-  width: 90px;
+  min-width: 90px;
   border-radius: 25px;
   text-align: center;
   font-size: 1.2rem;
   font-weight: bolder;
+  position: fixed;
+  pointer-events: none;
 }
 
 .rectangleOnMap {
@@ -140,9 +142,12 @@
   top: 10px;
 }
 
-.leaflet-control-layers-expanded {
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
+  margin: 10px;
   padding: 0;
+  border: 0px;
   border-radius: 10px;
+  background: transparent;
 }
 
 .job-title {
@@ -150,9 +155,16 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
+  position: relative;
+  left: 0px;
+  transition: 0.2s ease-in-out;
+
+  &.active {
+    left: 20px;
+  }
 
   &[data-job="alchimiste"] {
-    background: url("../../../public/Ressources/Alchimiste/alchimiste.webp")
+    background: url("../../../public/Ressources/Alchimiste/alchimiste.jpg")
       center/cover;
 
     & label:nth-child(1) {
@@ -206,7 +218,7 @@
   }
 
   &[data-job="bucheron"] {
-    background: url("../../../public/Ressources/Bucheron/bucheron.webp")
+    background: url("../../../public/Ressources/Bucheron/bucheron.jpg")
       center/cover;
 
     & label:nth-child(1) {
@@ -291,8 +303,7 @@
   }
 
   &[data-job="paysan"] {
-    background: url("../../../public/Ressources/Paysan/paysan.webp")
-      center/cover;
+    background: url("../../../public/Ressources/Paysan/paysan.jpg") center/cover;
 
     & label:nth-child(1) {
       background: url("../../../public/Ressources/Paysan/Ble.png") center/cover;
@@ -347,8 +358,7 @@
   }
 
   &[data-job="mineur"] {
-    background: url("../../../public/Ressources/Mineur/mineur.webp")
-      center/cover;
+    background: url("../../../public/Ressources/Mineur/mineur.jpg") center/cover;
 
     & label:nth-child(1) {
       background: url("../../../public/Ressources/Mineur/Fer.png") center/cover;
@@ -403,7 +413,7 @@
   }
 
   &[data-job="pecheur"] {
-    background: url("../../../public/Ressources/Pecheur/pecheur.webp")
+    background: url("../../../public/Ressources/Pecheur/pecheur.jpg")
       center/cover;
 
     & label:nth-child(1) {
@@ -534,18 +544,6 @@
     opacity: 1;
     pointer-events: auto;
     z-index: 9999;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      border: 3px solid $color-1;
-      left: -82px;
-      top: -20px;
-      z-index: 9999;
-    }
   }
 }
 
