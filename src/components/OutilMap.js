@@ -10,13 +10,14 @@ const OutilMap = () => {
     const config = {
       mapImgWidth: 910,
       mapImgHeight: 653,
-      minZoom: 2,
+      minZoom: 1,
       maxZoom: 3,
       tileSize: 256,
       crs: L.CRS.Simple,
       attributionControl: false,
       ratio: 7,
       zoomControl: false,
+      zoomSnap: 0.5,
     };
 
     const zoom = 2; // Zoom initial
@@ -222,11 +223,11 @@ const OutilMap = () => {
     }
 
     // Crée un indicateur de ressources
-    function createNumberedIcon(number, imgUrl, zoom) {
+    function createNumberedIcon(number, imgUrl, zoom, maxZoom) {
       return L.divIcon({
         className: "numbered-icon",
         html: `
-                <img src="${imgUrl}" alt="Resource icon" />
+                <img src="${imgUrl}" alt="Icone de ressource" />
                 <span style="display: ${
                   zoom === 3 ? "inline" : "none"
                 }">${number}</span>
