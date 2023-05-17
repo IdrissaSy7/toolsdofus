@@ -82,7 +82,7 @@ import Poisskaille from "../JSON/pecheur.json";
 const jobs = {
   Alchimiste: [
     {
-      data: Ortie.Ortie,
+      data: Ortie.Ortie.monde1,
       name: "Ortie",
       imgUrl: "./Ressources/Alchimiste/Ortie.png",
     },
@@ -140,7 +140,7 @@ const jobs = {
   Bucheron: [
     {
       name: "Bois de Frêne",
-      data: Frene.Frene,
+      data: Frene.Frene.monde1,
       imgUrl: "./Ressources/Bucheron/Frene.png",
     },
     {
@@ -237,7 +237,7 @@ const jobs = {
   Paysan: [
     {
       name: "Blé",
-      data: Ble.Ble,
+      data: Ble.Ble.monde1,
       imgUrl: "./Ressources/Paysan/Ble.png",
     },
     {
@@ -299,7 +299,7 @@ const jobs = {
   Mineur: [
     {
       name: "Fer",
-      data: Fer.Fer,
+      data: Fer.Fer.monde1,
       imgUrl: "./Ressources/Mineur/Fer.png",
     },
     {
@@ -362,7 +362,7 @@ const jobs = {
   Pecheur: [
     {
       name: "Goujon",
-      data: Goujon.Goujon,
+      data: Goujon.Goujon.monde1,
       imgUrl: "./Ressources/Pecheur/Goujon.png",
     },
     {

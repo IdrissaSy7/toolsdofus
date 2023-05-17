@@ -1,50 +1,59 @@
 import React, { useEffect, useState, useRef } from "react";
 import L from "leaflet";
-import jobs from "./Ressources";
+import { mapConfigs } from "./MapConfig";
 
-const OutilMap = () => {
+const OutilMap = ({ mapId }) => {
   const mapRef = useRef();
   const [copiedPosition, setCopiedPosition] = useState(null);
+  const jobs = require(`./Ressources${mapId}`).default;
+
+  console.log(jobs);
 
   useEffect(() => {
     const config = {
-      mapImgWidth: 910,
-      mapImgHeight: 653,
-      minZoom: 1,
-      maxZoom: 3,
+      mapImgWidth: mapConfigs[mapId].mapImgWidth,
+      mapImgHeight: mapConfigs[mapId].mapImgHeight,
+      minZoom: mapConfigs[mapId].minZoom,
+      maxZoom: mapConfigs[mapId].maxZoom,
       tileSize: 256,
       crs: L.CRS.Simple,
       attributionControl: false,
-      ratio: 7,
+      ratio: mapConfigs[mapId].ratio,
       zoomControl: false,
       zoomSnap: 0.5,
+      zoom: mapConfigs[mapId].zoom,
+      lat: mapConfigs[mapId].lat,
+      lng: mapConfigs[mapId].lng,
+      xOffset: mapConfigs[mapId].xOffset,
+      yOffset: mapConfigs[mapId].yOffset,
+      tileLayerPath: mapConfigs[mapId].tileLayerPath,
     };
 
-    const zoom = 2; // Zoom initial
-    const lat = -500; // Point central de la map
-    const lng = 650; // Point central de la map
-
-    const map = L.map(mapRef.current, config).setView([lat, lng], zoom);
-    L.tileLayer("./Tiles/1/{z}/{y}/{x}.jpg", {}).addTo(map);
-
-    const xOffset = 664; // Décalage en pixels vers la droite
-    const yOffset = 506.5; // Décalage en pixels vers le bas
+    const map = L.map(mapRef.current, config).setView(
+      [config.lat, config.lng],
+      config.zoom
+    );
+    L.tileLayer(config.tileLayerPath, {}).addTo(map);
 
     // Fonction qui converti les coordonnées Leaflet en Dofus
     function leafletCoordsToDofusCoords(mapY, mapX) {
       let dofusX =
-        (mapX - xOffset) / (config.mapImgWidth / Math.pow(2, config.ratio));
+        (mapX - config.xOffset) /
+        (config.mapImgWidth / Math.pow(2, config.ratio));
       let dofusY =
-        -(mapY + yOffset) / (config.mapImgHeight / Math.pow(2, config.ratio));
+        -(mapY + config.yOffset) /
+        (config.mapImgHeight / Math.pow(2, config.ratio));
       return [dofusX, dofusY];
     }
 
     // Fonction qui converti les coordonnées Dofus en Leaflet
     function dofusCoordsToLeafletCoords(dofusX, dofusY) {
       let mapX =
-        dofusX * (config.mapImgWidth / Math.pow(2, config.ratio)) + xOffset;
+        dofusX * (config.mapImgWidth / Math.pow(2, config.ratio)) +
+        config.xOffset;
       let mapY =
-        -dofusY * (config.mapImgHeight / Math.pow(2, config.ratio)) - yOffset;
+        -dofusY * (config.mapImgHeight / Math.pow(2, config.ratio)) -
+        config.yOffset;
       return [mapY, mapX];
     }
 
@@ -67,6 +76,19 @@ const OutilMap = () => {
       divCoordinates.style.display = "none";
     }
 
+    // Mets à jour la taille de l'image de base
+    const zoom = map.getZoom();
+    const iconHeight = 12 * Math.pow(2, zoom - 1);
+    document.documentElement.style.setProperty(
+      "--icon-height",
+      `${iconHeight}px`
+    );
+    const numberSize = 1 * Math.pow(1.1, zoom - 1);
+    document.documentElement.style.setProperty(
+      "--number-size",
+      `${numberSize}rem`
+    );
+
     // Met a jour le rectangle en fonction du zoom
     function zoomChangeOnMap(e) {
       var iconRectangle = objOnMap.rectangle.options.icon;
@@ -80,8 +102,12 @@ const OutilMap = () => {
         "--icon-height",
         `${iconHeight}px`
       );
+      const numberSize = 1 * Math.pow(1.1, zoom - 1);
+      document.documentElement.style.setProperty(
+        "--number-size",
+        `${numberSize}rem`
+      );
 
-      // Met à jour les marqueurs en fonction du niveau de zoom
       updateResourceMarkers();
     }
 
@@ -224,14 +250,19 @@ const OutilMap = () => {
 
     // Crée un indicateur de ressources
     function createNumberedIcon(number, imgUrl, zoom, maxZoom) {
+      let iconSize = getRectangleOnMapSize();
+      let iconAnchor = [iconSize[0] / 2, iconSize[1] / 2];
+
       return L.divIcon({
         className: "numbered-icon",
+        iconSize: iconSize,
+        iconAnchor: iconAnchor,
         html: `
-                <img src="${imgUrl}" alt="Icone de ressource" />
-                <span style="display: ${
-                  zoom === 3 ? "inline" : "none"
-                }">${number}</span>
-              `,
+            <img src="${imgUrl}" alt="Icone de ressource" />
+            <span style="display: ${
+              zoom >= 3 ? "inline" : "none"
+            }">${number}</span>
+          `,
       });
     }
 
@@ -355,6 +386,8 @@ const OutilMap = () => {
         const isOpen = resourcesContainer.classList.toggle("open");
         title.classList.toggle("active");
 
+        updateResourceMarkers();
+
         if (isOpen) {
           closeOtherLayers(job);
         }
@@ -366,7 +399,6 @@ const OutilMap = () => {
     map.on("moveend", updateResourceMarkers);
     map.on("zoomend", () => {
       zoomChangeOnMap();
-      updateResourceMarkers();
     });
     map.on("click", popup);
 
