@@ -5,7 +5,7 @@ import { mapConfigs } from "./MapConfig";
 const OutilMap = ({ mapId }) => {
   const mapRef = useRef();
   const [copiedPosition, setCopiedPosition] = useState(null);
-  const jobs = require(`./Ressources${mapId}`).default;
+  const jobs = require(`../ressources/Monde${mapId}`).default;
 
   console.log(jobs);
 
@@ -36,25 +36,25 @@ const OutilMap = ({ mapId }) => {
     L.tileLayer(config.tileLayerPath, {}).addTo(map);
 
     // Fonction qui converti les coordonnées Leaflet en Dofus
-    function leafletCoordsToDofusCoords(mapY, mapX) {
+    function leafletCoordsToDofusCoords(leafletY, leafletX) {
       let dofusX =
-        (mapX - config.xOffset) /
+        (leafletX - config.xOffset) /
         (config.mapImgWidth / Math.pow(2, config.ratio));
       let dofusY =
-        -(mapY + config.yOffset) /
+        -(leafletY + config.yOffset) /
         (config.mapImgHeight / Math.pow(2, config.ratio));
       return [dofusX, dofusY];
     }
 
     // Fonction qui converti les coordonnées Dofus en Leaflet
     function dofusCoordsToLeafletCoords(dofusX, dofusY) {
-      let mapX =
+      let leafletX =
         dofusX * (config.mapImgWidth / Math.pow(2, config.ratio)) +
         config.xOffset;
-      let mapY =
+      let leafletY =
         -dofusY * (config.mapImgHeight / Math.pow(2, config.ratio)) -
         config.yOffset;
-      return [mapY, mapX];
+      return [leafletY, leafletX];
     }
 
     // Fonction pour voir les coordonnées
@@ -179,7 +179,7 @@ const OutilMap = ({ mapId }) => {
         .join("<br>");
 
       var popupContent = `
-      <div class="popupContent">
+      <div class="popup">
         <p>
           <span>
                   <img src="./img/dragodinde.png" alt="image dragodinde" /> Voyager vers 
@@ -254,7 +254,7 @@ const OutilMap = ({ mapId }) => {
       let iconAnchor = [iconSize[0] / 2, iconSize[1] / 2];
 
       return L.divIcon({
-        className: "numbered-icon",
+        className: "numbered-resource",
         iconSize: iconSize,
         iconAnchor: iconAnchor,
         html: `
@@ -374,10 +374,23 @@ const OutilMap = ({ mapId }) => {
         "job-resources",
         controlContainer
       );
+
       const layersList = controlContainer.querySelector(
         ".leaflet-control-layers-list"
       );
       resourcesContainer.appendChild(layersList);
+
+      const checkboxes = controlContainer.querySelectorAll(
+        ".leaflet-control-layers-selector"
+      );
+
+      checkboxes.forEach((checkbox) => {
+        const parentLabel = checkbox.closest("label");
+        if (parentLabel) {
+          const resourceName = parentLabel.innerText.trim();
+          parentLabel.setAttribute("data-resource", resourceName);
+        }
+      });
 
       // Ajoute le conteneur pour les ressources à l'intérieur du titre
       title.appendChild(resourcesContainer);

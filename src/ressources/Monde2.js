@@ -1,14 +1,14 @@
-import Ortie from "../JSON/alchimiste.json";
-import Frene from "../JSON/bucheron.json";
-import Fer from "../JSON/mineur.json";
-import Goujon from "../JSON/pecheur.json";
-import Ble from "../JSON/paysan.json";
+import Alchimiste from "../JSON/alchimiste.json";
+import Bucheron from "../JSON/bucheron.json";
+import Paysan from "../JSON/paysan.json";
+import Mineur from "../JSON/mineur.json";
+import Pecheur from "../JSON/pecheur.json";
 
 // Data ressources
 const jobs = {
   Alchimiste: [
     {
-      data: Ortie.Ortie.monde2,
+      data: Alchimiste.Ortie.monde2,
       name: "Ortie",
       imgUrl: "./Ressources/Alchimiste/Ortie.png",
     },
@@ -16,28 +16,28 @@ const jobs = {
   Bucheron: [
     {
       name: "Bois de Frêne",
-      data: Frene.Frene.monde2,
+      data: Bucheron.Frene.monde2,
       imgUrl: "./Ressources/Bucheron/Frene.png",
     },
   ],
   Paysan: [
     {
       name: "Blé",
-      data: Ble.Ble.monde2,
+      data: Paysan.Ble.monde2,
       imgUrl: "./Ressources/Paysan/Ble.png",
     },
   ],
   Mineur: [
     {
       name: "Fer",
-      data: Fer.Fer.monde2,
+      data: Mineur.Fer.monde2,
       imgUrl: "./Ressources/Mineur/Fer.png",
     },
   ],
   Pecheur: [
     {
       name: "Goujon",
-      data: Goujon.Goujon.monde2,
+      data: Pecheur.Goujon.monde2,
       imgUrl: "./Ressources/Pecheur/Goujon.png",
     },
   ],
