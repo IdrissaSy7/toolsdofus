@@ -29,7 +29,7 @@ export const mapConfigs = {
     mapImgWidth: 750,
     mapImgHeight: 545,
     minZoom: 3,
-    maxZoom: 3,
+    maxZoom: 4,
     zoom: 3,
     ratio: 7,
     lat: -50,
