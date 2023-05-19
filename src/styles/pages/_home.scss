@@ -6,6 +6,20 @@
   margin: 25px;
   font-family: "font-2", sans-serif;
 
+  div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-bottom: 20px;
+
+      a {
+        font-weight: bolder;
+        font-family: "font-1", sans-serif;
+      }
+    }
+  }
+
   h2,
   p,
   a {

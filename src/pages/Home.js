@@ -23,6 +23,11 @@ const Home = () => {
               position de toutes les ressources du jeu et un Outil d'Achat
               Revente permettant de garder un oeil sur ses ventes.
             </p>
+
+            <p>
+              Si vous souhaitez me signaler un bug :
+              <a href="mailto: contact117817@gmail.com"> Contact</a>
+            </p>
           </div>
         </div>
       </div>
