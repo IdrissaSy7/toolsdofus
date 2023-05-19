@@ -1,19 +1,19 @@
 import Alchimiste from "../JSON/alchimiste.json";
-import Bucheron from "../JSON/bucheron.json";
+import Paysan from "../JSON/paysan.json";
 
 const jobs = {
   Alchimiste: [
     {
-      data: Alchimiste.PerceNeige.monde3,
-      name: "Perce-Neige",
-      imgUrl: "./Ressources/Alchimiste/PerceNeige.png",
+      data: Alchimiste.Salikrone.monde6,
+      name: "Salikrone",
+      imgUrl: "./Ressources/Alchimiste/Salikrone.png",
     },
   ],
-  Bucheron: [
+  Paysan: [
     {
-      data: Bucheron.Tremble.monde3,
-      name: "Bois de Tremble",
-      imgUrl: "./Ressources/Bucheron/Tremble.png",
+      data: Paysan.Quisnoa.monde6,
+      name: "Quisnoa",
+      imgUrl: "./Ressources/Paysan/Quisnoa.png",
     },
   ],
 };

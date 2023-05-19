@@ -128,11 +128,12 @@
     align-items: center;
     background: $color-1;
     border-radius: 10px;
+    box-shadow: 0 0 5px $color-2;
   }
 
   .coords {
     margin-left: 5px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: bolder;
     background: $color-1;
     color: $color-8;
@@ -148,7 +149,7 @@
   }
 
   .resource-list {
-    margin: 15px auto;
+    margin-bottom: 10px;
   }
 }
 
@@ -237,7 +238,7 @@
       background: url("../../../public/Ressources/Alchimiste/Salikrone.png")
         center/cover;
     }
-    & [data-resource="Tulipe en Papier"] {
+    & [data-resource="Tulipe en papier"] {
       background: url("../../../public/Ressources/Alchimiste/Tulipe.png")
         center/cover;
     }

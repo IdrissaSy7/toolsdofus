@@ -1,19 +1,32 @@
 import Alchimiste from "../JSON/alchimiste.json";
-import Bucheron from "../JSON/bucheron.json";
+import Mineur from "../JSON/mineur.json";
+import Pecheur from "../JSON/pecheur.json";
 
 const jobs = {
   Alchimiste: [
     {
-      data: Alchimiste.PerceNeige.monde3,
-      name: "Perce-Neige",
-      imgUrl: "./Ressources/Alchimiste/PerceNeige.png",
+      data: Alchimiste.Tulipe.monde7,
+      name: "Tulipe en papier",
+      imgUrl: "./Ressources/Alchimiste/Tulipe.png",
     },
   ],
-  Bucheron: [
+  Mineur: [
     {
-      data: Bucheron.Tremble.monde3,
-      name: "Bois de Tremble",
-      imgUrl: "./Ressources/Bucheron/Tremble.png",
+      data: Mineur.CristalPliable.monde7,
+      name: "Cristal pliable",
+      imgUrl: "./Ressources/Mineur/CristalPliable.png",
+    },
+    {
+      data: Mineur.CristalLiquide.monde7,
+      name: "Cristal liquide",
+      imgUrl: "./Ressources/Mineur/CristalLiquide.png",
+    },
+  ],
+  Pecheur: [
+    {
+      data: Pecheur.Pichon.monde7,
+      name: "Pichon d'encre",
+      imgUrl: "./Ressources/pecheur/Pichon.png",
     },
   ],
 };

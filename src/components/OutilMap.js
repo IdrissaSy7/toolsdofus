@@ -7,8 +7,6 @@ const OutilMap = ({ mapId }) => {
   const [copiedPosition, setCopiedPosition] = useState(null);
   const jobs = require(`../ressources/Monde${mapId}`).default;
 
-  console.log(jobs);
-
   useEffect(() => {
     const config = {
       mapImgWidth: mapConfigs[mapId].mapImgWidth,
@@ -63,7 +61,7 @@ const OutilMap = ({ mapId }) => {
       let x = Math.floor(coords[0]);
       let y = Math.floor(coords[1]);
       var divCoordinates = document.getElementById("position");
-      divCoordinates.innerHTML = x + ", " + y;
+      divCoordinates.innerHTML = `${x}, ${y}`;
       divCoordinates.style.top = e.containerPoint.y + 20 + "px";
       divCoordinates.style.left = e.containerPoint.x + 40 + "px";
       divCoordinates.style.display = "block";
@@ -182,22 +180,27 @@ const OutilMap = ({ mapId }) => {
           return accumulator;
         }, [])
         .map(({ name, count, imgUrl }) => {
-          return `<img src="${imgUrl}" alt="${name}" /> ${count} x ${name}`;
+          return `
+
+
+          <img src="${imgUrl}" alt="${name}" /> ${count} x ${name}
+          
+          `;
         })
         .join("<br>");
 
       var popupContent = `
       <div class="popup">
         <p>
-          <span>
+              <span>
                   <img src="./img/dragodinde.png" alt="image dragodinde" /> Voyager vers 
               <span onclick="copyCoordinates('${x}', '${y}')">
               <span class="coords"> [${x}, ${y}]</span>
             </span>
             </span>
-
+            
             <span class="resource-list">
-           ${resourceList}
+              ${resourceList} 
             </span>
         </p>
       </div>

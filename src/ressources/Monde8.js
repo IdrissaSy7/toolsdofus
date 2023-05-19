@@ -1,19 +1,11 @@
-import Alchimiste from "../JSON/alchimiste.json";
-import Bucheron from "../JSON/bucheron.json";
+import Mineur from "../JSON/mineur.json";
 
 const jobs = {
-  Alchimiste: [
+  Mineur: [
     {
-      data: Alchimiste.PerceNeige.monde3,
-      name: "Perce-Neige",
-      imgUrl: "./Ressources/Alchimiste/PerceNeige.png",
-    },
-  ],
-  Bucheron: [
-    {
-      data: Bucheron.Tremble.monde3,
-      name: "Bois de Tremble",
-      imgUrl: "./Ressources/Bucheron/Tremble.png",
+      data: Mineur.Cendrepierre.monde8,
+      name: "Cendrepierre",
+      imgUrl: "./Ressources/Mineur/Cendrepierre.png",
     },
   ],
 };

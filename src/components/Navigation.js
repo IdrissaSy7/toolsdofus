@@ -31,6 +31,13 @@ const Navigation = () => {
               <span>Vente</span>
             </li>
           </NavLink>
+
+          <li>
+            <a href="mailto: contact117817@gmail.com">
+              <img src="./img/annuaire.png" alt="image annuaire" />
+              <span>Contact</span>
+            </a>
+          </li>
         </ul>
       </label>
     </div>
