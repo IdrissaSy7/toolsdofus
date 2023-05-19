@@ -1,7 +1,6 @@
 import Alchimiste from "../JSON/alchimiste.json";
 import Bucheron from "../JSON/bucheron.json";
 
-// Data ressources
 const jobs = {
   Alchimiste: [
     {

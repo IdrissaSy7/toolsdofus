@@ -1,20 +1,21 @@
-import PerceNeige from "../JSON/alchimiste.json";
-import Tremble from "../JSON/bucheron.json";
+import Alchimiste from "../JSON/alchimiste.json";
+import Bucheron from "../JSON/bucheron.json";
 
-// Data ressources
 const jobs = {
   Alchimiste: [
     {
-      data: PerceNeige.PerceNeige,
+      data: Alchimiste.PerceNeige.monde3,
       name: "Perce-Neige",
       imgUrl: "./Ressources/Alchimiste/PerceNeige.png",
     },
   ],
   Bucheron: [
     {
+      data: Bucheron.Tremble.monde3,
       name: "Bois de Tremble",
-      data: Tremble.Tremble,
       imgUrl: "./Ressources/Bucheron/Tremble.png",
     },
   ],
 };
+
+export default jobs;

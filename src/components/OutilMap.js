@@ -149,16 +149,6 @@ const OutilMap = ({ mapId }) => {
       }
     };
 
-    // Compte les occurrences de chaque ressource dans un tableau
-    function countResources(resources) {
-      const resourceCounts = {};
-      resources.forEach((resource) => {
-        resourceCounts[resource.name] =
-          (resourceCounts[resource.name] || 0) + 1;
-      });
-      return resourceCounts;
-    }
-
     // Pop-up au clic sur une position
     const popup = (e) => {
       closeOtherLayers();
@@ -166,16 +156,34 @@ const OutilMap = ({ mapId }) => {
       const x = Math.floor(coords[0]);
       const y = Math.floor(coords[1]);
 
-      // Affiche les ressources aux coordonnées spécifiées dans la console
+      // Affiche les ressources aux coordonnées spécifiées
       const resourcesAtPosition = getResourcesAtPosition(x, y);
 
       // Convertie les coordonnées Dofus en Leaflet
       const latlng = dofusCoordsToLeafletCoords(x, y);
 
-      // Compte les occurrences de chaque ressource et formate la chaîne
-      const resourceCounts = countResources(resourcesAtPosition);
-      const resourceList = Object.entries(resourceCounts)
-        .map(([resourceName, count]) => `${count} x ${resourceName}`)
+      // Compte les occurrences de chaque ressource
+      const resourceList = resourcesAtPosition
+        .reduce((accumulator, resource) => {
+          const existingResource = accumulator.find(
+            (item) => item.name === resource.name
+          );
+
+          if (existingResource) {
+            existingResource.count++;
+          } else {
+            accumulator.push({
+              name: resource.name,
+              count: 1,
+              imgUrl: resource.imgUrl,
+            });
+          }
+
+          return accumulator;
+        }, [])
+        .map(({ name, count, imgUrl }) => {
+          return `<img src="${imgUrl}" alt="${name}" /> ${count} x ${name}`;
+        })
         .join("<br>");
 
       var popupContent = `
@@ -189,7 +197,7 @@ const OutilMap = ({ mapId }) => {
             </span>
 
             <span class="resource-list">
-           ${resourceList ? "<br>" + resourceList : ""}
+           ${resourceList}
             </span>
         </p>
       </div>
@@ -217,7 +225,6 @@ const OutilMap = ({ mapId }) => {
           grouped[key].count++;
         }
       });
-
       return Object.values(grouped);
     }
 
@@ -237,6 +244,9 @@ const OutilMap = ({ mapId }) => {
           resource.data.forEach((point) => {
             if (point[0] === x && point[1] === y) {
               const groupName = `${resource.name}`;
+              if (!overlayMaps[job] || !overlayMaps[job][groupName]) {
+                return;
+              }
               const layerGroup = overlayMaps[job][groupName];
               if (map.hasLayer(layerGroup) && isCoordinateInView(point)) {
                 resourcesAtPosition.push(resource);
@@ -249,7 +259,7 @@ const OutilMap = ({ mapId }) => {
     }
 
     // Crée un indicateur de ressources
-    function createNumberedIcon(number, imgUrl, zoom, maxZoom) {
+    function createNumberedIcon(number, imgUrl, zoom) {
       let iconSize = getRectangleOnMapSize();
       let iconAnchor = [iconSize[0] / 2, iconSize[1] / 2];
 
@@ -258,11 +268,9 @@ const OutilMap = ({ mapId }) => {
         iconSize: iconSize,
         iconAnchor: iconAnchor,
         html: `
-            <img src="${imgUrl}" alt="Icone de ressource" />
-            <span style="display: ${
-              zoom >= 3 ? "inline" : "none"
-            }">${number}</span>
-          `,
+      <img src="${imgUrl}" alt="Icone de ressource" />
+      <span style="display: ${zoom >= 3 ? "inline" : "none"}">${number}</span>
+    `,
       });
     }
 
@@ -278,12 +286,30 @@ const OutilMap = ({ mapId }) => {
           group.coordinates[0],
           group.coordinates[1]
         );
-        const icon = createNumberedIcon(group.count, imgUrl, map.getZoom());
+
+        const resourcesAtPosition = getResourcesAtPosition(
+          group.coordinates[0],
+          group.coordinates[1]
+        );
+
+        const uniqueResources = new Set(
+          resourcesAtPosition.map((resource) => resource.name)
+        );
+
+        const number = resourcesAtPosition.length;
+
+        let updatedImgUrl = imgUrl;
+        if (uniqueResources.size > 1) {
+          updatedImgUrl = "./img/metier.png";
+        }
+
+        const icon = createNumberedIcon(number, updatedImgUrl, map.getZoom());
         const marker = L.marker(coordinates, { icon: icon });
         layerGroup.addLayer(marker);
       });
     }
 
+    // Fonction pour updater les marqueurs pour chaque ressource
     function updateResourceMarkers() {
       for (const job in overlayMaps) {
         for (const groupName in overlayMaps[job]) {

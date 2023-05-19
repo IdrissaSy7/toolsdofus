@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +8,11 @@
 
 @font-face {
   font-family: font-1;
-  src: url(../styles/fonts/Ysabeau-VariableFont_wght.ttf);
+  src: url(../styles/fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+@font-face {
+  font-family: font-2;
+  src: url(../styles/fonts/Ubuntu/Ubuntu-Light.ttf);
 }
 body {
   background: #36393c;
@@ -25,7 +30,7 @@ body a {
   margin: 0 auto;
   text-align: center;
   color: #fff;
-  margin-top: 20px;
+  margin: 40px 0px;
   text-shadow: 0 0 5px black;
 }
 
@@ -141,6 +146,7 @@ body a {
   border-radius: 5px;
   border: 1px solid #fff;
   font-size: 1.2rem;
+  margin: 10px;
 }
 .input button {
   width: 200px;
@@ -148,7 +154,7 @@ body a {
   padding: 5px 15px;
   border-radius: 15px;
   border: 1px solid #161719;
-  margin: 0 auto;
+  margin: 20px auto;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   background: #161719;
@@ -239,24 +245,495 @@ body a {
 #map {
   width: 100vw;
   height: 100vh;
+  background: #161719;
 }
 
 #position {
-  position: absolute;
-  z-index: 9998;
+  z-index: 999;
   padding: 10px;
   background-color: #161719;
   color: #fff;
-  width: 90px;
-  height: 50px;
+  min-width: 90px;
   border-radius: 25px;
   text-align: center;
   font-size: 1.2rem;
   font-weight: bolder;
+  position: fixed;
+  pointer-events: none;
 }
 
 .rectangleOnMap {
   border: 2px solid #161719;
+  border-radius: 5px;
+}
+
+#select-world {
+  position: absolute;
+  z-index: 9999;
+  right: 30px;
+  top: 30px;
+  font-size: 1.2rem;
+  background: #161719;
+  color: #fff;
+  font-family: "font-1", sans-serif;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: 0 0 5px #36393c;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+#position-indicator {
+  position: absolute;
+  z-index: 9999;
+  background: #161719;
+  color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "font-2", sans-serif;
+}
+#position-indicator img {
+  width: auto;
+  height: 30px;
+  margin: 0 5px 0 0;
+}
+
+.numbered-resource {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  margin: 0 !important;
+}
+.numbered-resource img {
+  width: auto;
+  height: var(--icon-height);
+  filter: drop-shadow(0 0 3px #161719);
+}
+.numbered-resource span {
+  font-size: var(--number-size, 1.5rem);
+  font-family: "font-1", sans-serif;
+  color: #fff;
+  text-shadow: 2px 2px #161719;
+  filter: drop-shadow(0 0 2px #161719);
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent;
+  font-size: 1rem;
+  font-family: "font-2", sans-serif;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 30px;
+}
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  margin: 0;
+  width: 300px;
+  height: 50px;
+}
+
+.leaflet-popup-close-button,
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+.popup {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.popup p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #161719;
+  border-radius: 10px;
+}
+.popup .coords {
+  margin-left: 5px;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  background: #161719;
+  color: #84b437;
+  cursor: pointer;
+  font-family: "font-1", sans-serif;
+}
+.popup img {
+  width: auto;
+  height: 30px;
+  position: relative;
+  top: 8px;
+}
+.popup .resource-list {
+  margin: 15px auto;
+}
+
+.leaflet-left {
+  left: 80px;
+}
+
+.leaflet-top {
+  top: 10px;
+}
+
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
+  margin: 10px;
+  padding: 0;
+  border: 0px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.job-title {
+  text-indent: -9999px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  left: 0px;
+  transition: 0.2s ease-in-out;
+}
+.job-title.active {
+  left: 20px;
+}
+.job-title[data-job=alchimiste] {
+  background: url("../../../public/Ressources/Alchimiste/alchimiste.jpg") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Ortie] {
+  background: url("../../../public/Ressources/Alchimiste/Ortie.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Sauge] {
+  background: url("../../../public/Ressources/Alchimiste/Sauge.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource="Trèfle à 5 feuilles"] {
+  background: url("../../../public/Ressources/Alchimiste/Trefle.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource="Menthe Sauvage"] {
+  background: url("../../../public/Ressources/Alchimiste/Menthe.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource="Orchidée Freyesque"] {
+  background: url("../../../public/Ressources/Alchimiste/Orchidee.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Edelweiss] {
+  background: url("../../../public/Ressources/Alchimiste/Edelweiss.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource="Graine de Pandouille"] {
+  background: url("../../../public/Ressources/Alchimiste/Pandouille.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Ginseng] {
+  background: url("../../../public/Ressources/Alchimiste/Ginseng.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Belladone] {
+  background: url("../../../public/Ressources/Alchimiste/Belladone.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Mandragore] {
+  background: url("../../../public/Ressources/Alchimiste/Mandragore.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Perce-Neige] {
+  background: url("../../../public/Ressources/Alchimiste/PerceNeige.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource=Salikrone] {
+  background: url("../../../public/Ressources/Alchimiste/Salikrone.png") center/cover;
+}
+.job-title[data-job=alchimiste] [data-resource="Tulipe en Papier"] {
+  background: url("../../../public/Ressources/Alchimiste/Tulipe.png") center/cover;
+}
+.job-title[data-job=bucheron] {
+  background: url("../../../public/Ressources/Bucheron/bucheron.jpg") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Frêne"] {
+  background: url("../../../public/Ressources/Bucheron/Frene.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Châtaignier"] {
+  background: url("../../../public/Ressources/Bucheron/Chataigner.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Noyer"] {
+  background: url("../../../public/Ressources/Bucheron/Noyer.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Chêne"] {
+  background: url("../../../public/Ressources/Bucheron/Chene.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Bombu"] {
+  background: url("../../../public/Ressources/Bucheron/Bombu.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois d'Érable"] {
+  background: url("../../../public/Ressources/Bucheron/Erable.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois d'Oliviolet"] {
+  background: url("../../../public/Ressources/Bucheron/Oliviolet.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Pin"] {
+  background: url("../../../public/Ressources/Bucheron/Pin.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois d'If"] {
+  background: url("../../../public/Ressources/Bucheron/If.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Bambou"] {
+  background: url("../../../public/Ressources/Bucheron/Bambou.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Merisier"] {
+  background: url("../../../public/Ressources/Bucheron/Merisier.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Noisetier"] {
+  background: url("../../../public/Ressources/Bucheron/Noisetier.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois d'Ébène"] {
+  background: url("../../../public/Ressources/Bucheron/Ebene.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Kaliptus"] {
+  background: url("../../../public/Ressources/Bucheron/Kaliptus.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Charme"] {
+  background: url("../../../public/Ressources/Bucheron/Charme.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Bambou Sombre"] {
+  background: url("../../../public/Ressources/Bucheron/BambouSombre.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois d'Orme"] {
+  background: url("../../../public/Ressources/Bucheron/Orme.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Bambou Sacré"] {
+  background: url("../../../public/Ressources/Bucheron/BambouSacre.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois de Tremble"] {
+  background: url("../../../public/Ressources/Bucheron/Tremble.png") center/cover;
+}
+.job-title[data-job=bucheron] [data-resource="Bois d'Aquajou"] {
+  background: url("../../../public/Ressources/Bucheron/Aquajou.png") center/cover;
+}
+.job-title[data-job=paysan] {
+  background: url("../../../public/Ressources/Paysan/paysan.jpg") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Blé] {
+  background: url("../../../public/Ressources/Paysan/Ble.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Orge] {
+  background: url("../../../public/Ressources/Paysan/Orge.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Avoine] {
+  background: url("../../../public/Ressources/Paysan/Avoine.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Houblon] {
+  background: url("../../../public/Ressources/Paysan/Houblon.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Lin] {
+  background: url("../../../public/Ressources/Paysan/Lin.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Seigle] {
+  background: url("../../../public/Ressources/Paysan/Seigle.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Riz] {
+  background: url("../../../public/Ressources/Paysan/Riz.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Malt] {
+  background: url("../../../public/Ressources/Paysan/Malt.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Chanvre] {
+  background: url("../../../public/Ressources/Paysan/Chanvre.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Maïs] {
+  background: url("../../../public/Ressources/Paysan/Mais.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Millet] {
+  background: url("../../../public/Ressources/Paysan/Millet.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Frostiz] {
+  background: url("../../../public/Ressources/Paysan/Frostiz.png") center/cover;
+}
+.job-title[data-job=paysan] [data-resource=Quisnoa] {
+  background: url("../../../public/Ressources/Paysan/Quisnoa.png") center/cover;
+}
+.job-title[data-job=mineur] {
+  background: url("../../../public/Ressources/Mineur/mineur.jpg") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Fer] {
+  background: url("../../../public/Ressources/Mineur/Fer.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Cuivre] {
+  background: url("../../../public/Ressources/Mineur/Cuivre.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Bronze] {
+  background: url("../../../public/Ressources/Mineur/Bronze.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Kobalte] {
+  background: url("../../../public/Ressources/Mineur/Kobalte.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Manganèse] {
+  background: url("../../../public/Ressources/Mineur/Manganese.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Étain] {
+  background: url("../../../public/Ressources/Mineur/Etain.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Silicate] {
+  background: url("../../../public/Ressources/Mineur/Silicate.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Argent] {
+  background: url("../../../public/Ressources/Mineur/Argent.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Bauxite] {
+  background: url("../../../public/Ressources/Mineur/Bauxite.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Or] {
+  background: url("../../../public/Ressources/Mineur/Or.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Dolomite] {
+  background: url("../../../public/Ressources/Mineur/Dolomite.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Cendrepierre] {
+  background: url("../../../public/Ressources/Mineur/Cendrepierre.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource=Obsidienne] {
+  background: url("../../../public/Ressources/Mineur/Obsidienne.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource="Écume de mer"] {
+  background: url("../../../public/Ressources/Mineur/Ecume.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource="Cristal pliable"] {
+  background: url("../../../public/Ressources/Mineur/CristalPliable.png") center/cover;
+}
+.job-title[data-job=mineur] [data-resource="Cristal liquide"] {
+  background: url("../../../public/Ressources/Mineur/CristalLiquide.png") center/cover;
+}
+.job-title[data-job=pecheur] {
+  background: url("../../../public/Ressources/Pecheur/pecheur.jpg") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Goujon] {
+  background: url("../../../public/Ressources/Pecheur/Goujon.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Greuvette] {
+  background: url("../../../public/Ressources/Pecheur/Greuvette.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Truite] {
+  background: url("../../../public/Ressources/Pecheur/Truite.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Crabe Sourimi"] {
+  background: url("../../../public/Ressources/Pecheur/Crabe.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Poisson-Chaton] {
+  background: url("../../../public/Ressources/Pecheur/PoissonChaton.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Poisson Pané"] {
+  background: url("../../../public/Ressources/Pecheur/PoissonPane.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Carpe d'Iem"] {
+  background: url("../../../public/Ressources/Pecheur/Carpe.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Sardine Brillante"] {
+  background: url("../../../public/Ressources/Pecheur/Sardine.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Brochet] {
+  background: url("../../../public/Ressources/Pecheur/Brochet.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Kralamoure] {
+  background: url("../../../public/Ressources/Pecheur/Kralamoure.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Anguille] {
+  background: url("../../../public/Ressources/Pecheur/Anguille.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Dorade Grise"] {
+  background: url("../../../public/Ressources/Pecheur/Dorade.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Perche] {
+  background: url("../../../public/Ressources/Pecheur/Perche.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Raie Bleue"] {
+  background: url("../../../public/Ressources/Pecheur/Raie.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Lotte] {
+  background: url("../../../public/Ressources/Pecheur/Lotte.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Requin Marteau-Faucille"] {
+  background: url("../../../public/Ressources/Pecheur/Requin.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Bar Rikain"] {
+  background: url("../../../public/Ressources/Pecheur/Bar.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Morue] {
+  background: url("../../../public/Ressources/Pecheur/Morue.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Tanche] {
+  background: url("../../../public/Ressources/Pecheur/Tanche.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Espadon] {
+  background: url("../../../public/Ressources/Pecheur/Espadon.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Poisskaille] {
+  background: url("../../../public/Ressources/Pecheur/Poisskaille.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource=Patelle] {
+  background: url("../../../public/Ressources/Pecheur/Patelle.png") center/cover;
+}
+.job-title[data-job=pecheur] [data-resource="Pichon d'encre"] {
+  background: url("../../../public/Ressources/Pecheur/Pichon.png") center/cover;
+}
+.job-title label {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #36393c;
+  box-shadow: 0 0 1px inset #84b437;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  color: #fff;
+  position: relative;
+}
+.job-title label input[type=checkbox]:checked + span::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  border: 3px solid #008000;
+  left: -3px;
+  top: -3px;
+}
+
+.job-resources {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, pointer-events 0.2s ease-in-out;
+  background-color: #161719;
+  border-radius: 15px;
+  display: flex;
+  position: absolute;
+  left: 80px;
+  box-shadow: 0 0 5px #161719;
+}
+.job-resources.open {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+.leaflet-control-layers-overlays {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-content: space-around;
+  justify-items: start;
+  width: 100%;
+  height: 100%;
 }
 
 .home-content {
@@ -265,6 +742,7 @@ body a {
   justify-content: space-around;
   align-items: center;
   margin: 25px;
+  font-family: "font-2", sans-serif;
 }
 .home-content h2,
 .home-content p,

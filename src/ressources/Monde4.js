@@ -4,7 +4,6 @@ import Paysan from "../JSON/paysan.json";
 import Mineur from "../JSON/mineur.json";
 import Pecheur from "../JSON/pecheur.json";
 
-// Data ressources
 const jobs = {
   Alchimiste: [
     {
