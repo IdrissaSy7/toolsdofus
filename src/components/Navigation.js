@@ -7,6 +7,7 @@ const Navigation = () => {
       <label for="checkbox">
         <i class="fa-solid fa-bars"></i>
       </label>
+
       <input type="checkbox" id="checkbox" />
 
       <label htmlFor="checkbox" id="checkbox">
