@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 const Navigation = () => {
   return (
     <div className="navigation">
-      <label for="checkbox">
-        <i class="fa-solid fa-bars"></i>
+      <label htmlFor="checkbox">
+        <i className="fa-solid fa-bars"></i>
       </label>
 
       <input type="checkbox" id="checkbox" />
@@ -16,6 +16,13 @@ const Navigation = () => {
             <li>
               <img src="./img/maison.png" alt="image home" />
               <span>Accueil</span>
+            </li>
+          </NavLink>
+
+          <NavLink to="/almanax">
+            <li>
+              <img src="./img/calendrier.png" alt="image calendrier" />
+              <span>Almanax</span>
             </li>
           </NavLink>
 
