@@ -164,6 +164,14 @@
   border: 0px;
   border-radius: 10px;
   background: transparent;
+
+  &:nth-child(1) {
+    padding-top: 20px;
+  }
+
+  &:nth-child(5) {
+    padding-bottom: 20px;
+  }
 }
 
 .job-title {
