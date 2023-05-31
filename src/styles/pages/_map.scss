@@ -182,6 +182,14 @@
     left: 20px;
   }
 
+  &.no-resource {
+    opacity: 0.4;
+
+    &.active {
+      left: 0px;
+    }
+  }
+
   &[data-job="alchimiste"] {
     background: url("../../../public/Ressources/Alchimiste/alchimiste.jpg")
       center/cover;

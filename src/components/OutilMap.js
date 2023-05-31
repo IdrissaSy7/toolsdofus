@@ -413,6 +413,10 @@ const OutilMap = ({ mapId }) => {
         ".leaflet-control-layers-selector"
       );
 
+      if (checkboxes.length === 0) {
+        title.classList.toggle("no-resource");
+      }
+
       checkboxes.forEach((checkbox) => {
         const parentLabel = checkbox.closest("label");
         if (parentLabel) {
