@@ -153,17 +153,14 @@
   }
 }
 
-.leaflet-left {
-  left: 80px;
-}
-
 .leaflet-top {
-  top: 10px;
+  left: 65px;
+  top: 0px;
 }
 
 .leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
-  margin: 10px;
-  padding: 0;
+  margin: 0;
+  padding: 10px 20px;
   border: 0px;
   border-radius: 10px;
   background: transparent;
@@ -175,18 +172,17 @@
   height: 50px;
   cursor: pointer;
   position: relative;
-  left: 0px;
   transition: 0.2s ease-in-out;
 
   &.active {
-    left: 20px;
+    margin-left: 20px;
   }
 
   &.no-resource {
     opacity: 0.4;
 
     &.active {
-      left: 0px;
+      margin-left: 0px;
     }
   }
 
@@ -600,7 +596,7 @@
   border-radius: 15px;
   display: flex;
   position: absolute;
-  left: 80px;
+  left: 70px;
   box-shadow: 0 0 5px $color-1;
 
   &.open {

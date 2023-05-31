@@ -60,18 +60,22 @@ const OutilMap = ({ mapId }) => {
       let coords = leafletCoordsToDofusCoords(e.latlng.lat, e.latlng.lng);
       let x = Math.floor(coords[0]);
       let y = Math.floor(coords[1]);
-      var divCoordinates = document.getElementById("position");
+      let divCoordinates = document.getElementById("position");
+      let rectangle = document.querySelector(".rectangleOnMap");
       divCoordinates.innerHTML = `${x}, ${y}`;
       divCoordinates.style.top = e.containerPoint.y + 20 + "px";
       divCoordinates.style.left = e.containerPoint.x + 40 + "px";
       divCoordinates.style.display = "block";
+      rectangle.style.display = "block";
       objOnMap.rectangle.setLatLng(dofusCoordsToLeafletCoords(x, y));
     }
 
     // Fonction qui cache la div quand la souris est en dehors de la map
     function mouseOutOfMap(e) {
-      var divCoordinates = document.getElementById("position");
+      let divCoordinates = document.getElementById("position");
+      let rectangle = document.querySelector(".rectangleOnMap");
       divCoordinates.style.display = "none";
+      rectangle.style.display = "none";
     }
 
     // Mets à jour la taille de l'image de base
@@ -89,7 +93,7 @@ const OutilMap = ({ mapId }) => {
 
     // Met a jour le rectangle en fonction du zoom
     function zoomChangeOnMap(e) {
-      var iconRectangle = objOnMap.rectangle.options.icon;
+      let iconRectangle = objOnMap.rectangle.options.icon;
       iconRectangle.options.iconSize = getRectangleOnMapSize();
       objOnMap.rectangle.setIcon(iconRectangle);
 
@@ -111,14 +115,14 @@ const OutilMap = ({ mapId }) => {
 
     // Regle la taille du rectangle
     function getRectangleOnMapSize() {
-      var zoom = map.getZoom();
+      let zoom = map.getZoom();
       return [
         config.mapImgWidth / Math.pow(2, config.ratio - zoom) - 2,
         config.mapImgHeight / Math.pow(2, config.ratio - zoom) - 2,
       ];
     }
 
-    var objOnMap = {
+    let objOnMap = {
       rectangle: null,
     };
 
@@ -189,7 +193,7 @@ const OutilMap = ({ mapId }) => {
         })
         .join("<br>");
 
-      var popupContent = `
+      let popupContent = `
       <div class="popup">
         <p>
               <span>
@@ -206,7 +210,7 @@ const OutilMap = ({ mapId }) => {
       </div>
   `;
 
-      var popupInstance = L.popup()
+      let popupInstance = L.popup()
         .setLatLng(latlng)
         .setContent(popupContent)
         .openOn(map);
@@ -437,6 +441,22 @@ const OutilMap = ({ mapId }) => {
         if (isOpen) {
           closeOtherLayers(job);
         }
+      });
+
+      const divResource = document.querySelector(".leaflet-top");
+      console.log(divResource);
+
+      let divCoordinates = document.getElementById("position");
+      let rectangle = document.querySelector(".rectangleOnMap");
+
+      divResource.addEventListener("mouseenter", () => {
+        divCoordinates.style.opacity = 0;
+        rectangle.style.opacity = 0;
+      });
+
+      divResource.addEventListener("mouseleave", () => {
+        divCoordinates.style.opacity = 1;
+        rectangle.style.opacity = 1;
       });
     });
 
