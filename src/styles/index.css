@@ -26,11 +26,16 @@ body a {
   text-decoration: none;
 }
 
+.root,
+.content {
+  height: 100vh;
+}
+
 .center {
   margin: 0 auto;
   text-align: center;
   color: #fff;
-  margin: 40px 0px;
+  padding: 40px 0 0;
   text-shadow: 0 0 5px black;
 }
 
@@ -48,20 +53,22 @@ body a {
     transform: translateX(0px);
   }
 }
-.loader {
-  font-size: 6em;
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-}
-
 .content {
   margin-left: 70px;
 }
 
+.animate {
+  animation: show 0.4s ease-in-out;
+}
+
+@keyframes show {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .navigation {
   display: flex;
   flex-direction: column;
@@ -96,7 +103,7 @@ body a {
 .navigation span {
   position: relative;
   left: 10px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-shadow: 0 0 5px black;
 }
 .navigation i {
@@ -166,13 +173,15 @@ body a {
 .input button:hover {
   box-shadow: 0px 0px 5px #161719;
 }
+.input button:active {
+  transform: scale(0.8);
+}
 
 .tableau {
   display: grid;
   align-items: start;
   width: 90%;
-  height: 700px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
 .tableau table {
   border-collapse: collapse;
@@ -370,10 +379,11 @@ body a {
   align-items: center;
   background: #161719;
   border-radius: 10px;
+  box-shadow: 0 0 5px #36393c;
 }
 .popup .coords {
   margin-left: 5px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: bolder;
   background: #161719;
   color: #84b437;
@@ -387,23 +397,26 @@ body a {
   top: 8px;
 }
 .popup .resource-list {
-  margin: 15px auto;
-}
-
-.leaflet-left {
-  left: 80px;
+  margin-bottom: 10px;
 }
 
 .leaflet-top {
-  top: 10px;
+  left: 65px;
+  top: 0px;
 }
 
 .leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
-  margin: 10px;
-  padding: 0;
+  margin: 0;
+  padding: 10px 20px;
   border: 0px;
   border-radius: 10px;
   background: transparent;
+}
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control:nth-child(1) {
+  padding-top: 20px;
+}
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control:nth-child(5) {
+  padding-bottom: 20px;
 }
 
 .job-title {
@@ -412,11 +425,16 @@ body a {
   height: 50px;
   cursor: pointer;
   position: relative;
-  left: 0px;
   transition: 0.2s ease-in-out;
 }
 .job-title.active {
-  left: 20px;
+  margin-left: 20px;
+}
+.job-title.no-resource {
+  opacity: 0.4;
+}
+.job-title.no-resource.active {
+  margin-left: 0px;
 }
 .job-title[data-job=alchimiste] {
   background: url("../../../public/Ressources/Alchimiste/alchimiste.jpg") center/cover;
@@ -457,7 +475,7 @@ body a {
 .job-title[data-job=alchimiste] [data-resource=Salikrone] {
   background: url("../../../public/Ressources/Alchimiste/Salikrone.png") center/cover;
 }
-.job-title[data-job=alchimiste] [data-resource="Tulipe en Papier"] {
+.job-title[data-job=alchimiste] [data-resource="Tulipe en papier"] {
   background: url("../../../public/Ressources/Alchimiste/Tulipe.png") center/cover;
 }
 .job-title[data-job=bucheron] {
@@ -718,7 +736,7 @@ body a {
   border-radius: 15px;
   display: flex;
   position: absolute;
-  left: 80px;
+  left: 70px;
   box-shadow: 0 0 5px #161719;
 }
 .job-resources.open {
@@ -738,25 +756,201 @@ body a {
 
 .home-content {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
   margin: 25px;
   font-family: "font-2", sans-serif;
 }
-.home-content h2,
-.home-content p,
-.home-content a {
+.home-content div h2,
+.home-content div p,
+.home-content div a {
   color: #fff;
 }
-.home-content h2 {
+.home-content div h2 {
   margin: 15px 0px;
 }
-.home-content p {
+.home-content div p {
   font-size: 1.2rem;
   font-weight: 500;
-  max-width: 600px;
+  max-width: 800px;
+  margin: 20px;
 }
-.home-content a {
+.home-content div p a {
   font-weight: bolder;
+  font-family: "font-1", sans-serif;
+}
+
+.homeImg {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url(../../../public/img/image2.jpeg) center/cover;
+  box-shadow: 0 0 25px #161719 inset;
+}
+
+.alma {
+  background: #161719;
+  border-radius: 15px;
+  width: 700px;
+  height: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+.alma .almanax {
+  display: flex;
+  flex-direction: column;
+}
+.alma .almanax h2 {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  position: relative;
+}
+.alma .almanax h3 {
+  margin-bottom: 20px;
+}
+.alma .almanax h3::before, .alma .almanax h3::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 230px;
+  height: 1px;
+  background: #36393c;
+}
+.alma .almanax h3::before {
+  left: -100px;
+}
+.alma .almanax h3::after {
+  right: -100px;
+}
+.alma .almanax p {
+  margin-bottom: 25px;
+}
+.alma .almanax .almanaxContent {
+  display: flex;
+  margin: 20px;
+}
+.alma .almanax .almanaxContent .almanaxContentImg {
+  margin-right: 30px;
+}
+.alma .almanax .almanaxContent .almanaxContentImg img {
+  border-radius: 15px;
+}
+.alma .almanax .almanaxContentText {
+  text-align: left;
+}
+.alma .almanax .almanaxContentOffrande {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.alma .almanax .almanaxContentOffrande .almanaxImgOffrande {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 400px;
+}
+.alma .almanax .almanaxContentOffrande .almanaxImgOffrande img {
+  margin-right: 10px;
+}
+.alma .button {
+  position: absolute;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: #36393c;
+  border: 1px solid #161719;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.alma .button i {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.alma .button.disabled i {
+  color: #161719;
+}
+.alma .button:active {
+  transform: scale(0.3);
+}
+.alma #buttonLeft {
+  left: 50px;
+}
+.alma #buttonRight {
+  right: 50px;
+}
+
+.almaFull {
+  display: flex;
+  flex-direction: column;
+}
+.almaFull h4 {
+  font-size: 1.3rem;
+}
+.almaFull .months {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 20px 0 40px;
+}
+.almaFull .months .month {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  cursor: pointer;
+}
+.almaFull .months .month img {
+  transition: 0.2s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #161719;
+  border: 3px solid #36393c;
+}
+.almaFull .months .month img:hover {
+  box-shadow: 0 0 15px #161719;
+}
+.almaFull .months .month.selected img {
+  border: 3px solid #008000;
+}
+.almaFull .months .month p {
+  font-size: 1.1rem;
+}
+.almaFull .fullCalendarTitle,
+.almaFull .fullCalendarList {
+  display: grid;
+  grid-template-columns: 15% 20% 40% 25%;
+}
+.almaFull .fullCalendarTitle {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+.almaFull .fullCalendarList {
+  justify-items: center;
+  align-items: center;
+  background: #161719;
+}
+.almaFull .fullCalendarList p {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 15px 10px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #36393c;
+  letter-spacing: 2px;
+  line-height: 23px;
+}
+.almaFull .fullCalendarList p:last-child {
+  grid-template-columns: 30% 70%;
+  justify-items: start;
+  text-align: left;
 }/*# sourceMappingURL=index.css.map */
