@@ -77,94 +77,92 @@ const AchatRevente = () => {
 
   return (
     <div>
-      <div>
-        <div className="input">
-          <div className="inputDiv">
-            <label htmlFor="name">Nom de l'objet</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="inputDiv">
-            <label htmlFor="name">Prix d'achat l'objet</label>
-            <input
-              type="text"
-              value={formattedPrice}
-              onChange={handlePriceChange}
-            />
-          </div>
-          <div className="inputDiv">
-            <label htmlFor="name">Prix de vente de l'objet</label>
-            <input
-              type="text"
-              value={formattedSellPrice}
-              onChange={handlePriceChangeSell}
-            />
-          </div>
-
-          <button onClick={addItem}>Ajouter</button>
+      <div className="input">
+        <div className="inputDiv">
+          <label htmlFor="name">Nom de l'objet</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="inputDiv">
+          <label htmlFor="name">Prix d'achat l'objet</label>
+          <input
+            type="text"
+            value={formattedPrice}
+            onChange={handlePriceChange}
+          />
+        </div>
+        <div className="inputDiv">
+          <label htmlFor="name">Prix de vente de l'objet</label>
+          <input
+            type="text"
+            value={formattedSellPrice}
+            onChange={handlePriceChangeSell}
+          />
         </div>
 
-        <div className="tableau">
-          <table>
-            <thead>
-              <tr>
-                <th>Nom de l'objet</th>
-                <th>Prix d'achat</th>
-                <th>Prix de revente</th>
-                <th>Taxe</th>
-                <th>Bénéfice</th>
-                <th>Supprimer</th>
-                <th>Vendu</th>
+        <button onClick={addItem}>Ajouter</button>
+      </div>
+
+      <div className="tableau">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom de l'objet</th>
+              <th>Prix d'achat</th>
+              <th>Prix de revente</th>
+              <th>Taxe</th>
+              <th>Bénéfice</th>
+              <th>Supprimer</th>
+              <th>Vendu</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {items.map((item, index) => (
+              <tr key={index} className={item.isSelled ? "item-vendu" : ""}>
+                <td>{item.name}</td>
+                <td>{formatNumberWithSpaces(item.price)}</td>
+                <td>{formatNumberWithSpaces(item.sellPrice)}</td>
+                <td>
+                  {formatNumberWithSpaces((item.sellPrice * 0.02).toFixed(0))}
+                </td>
+                <td
+                  className={`benefice ${
+                    item.sellPrice - item.sellPrice * 0.02 - item.price <= 0
+                      ? "negative"
+                      : "positive"
+                  }`}
+                >
+                  {formatNumberWithSpaces(
+                    (
+                      item.sellPrice -
+                      item.sellPrice * 0.02 -
+                      item.price
+                    ).toFixed(0)
+                  )}
+                </td>
+
+                <td>
+                  <button
+                    onClick={() => deleteItem(index)}
+                    className="deleteItem"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+                <td
+                  className="vendu"
+                  onClick={() => setItemSelled(index, true)}
+                >
+                  <i className="fas fa-check"></i>
+                </td>
               </tr>
-            </thead>
-
-            <tbody>
-              {items.map((item, index) => (
-                <tr key={index} className={item.isSelled ? "item-vendu" : ""}>
-                  <td>{item.name}</td>
-                  <td>{formatNumberWithSpaces(item.price)}</td>
-                  <td>{formatNumberWithSpaces(item.sellPrice)}</td>
-                  <td>
-                    {formatNumberWithSpaces((item.sellPrice * 0.02).toFixed(0))}
-                  </td>
-                  <td
-                    className={`benefice ${
-                      item.sellPrice - item.sellPrice * 0.02 - item.price <= 0
-                        ? "negative"
-                        : "positive"
-                    }`}
-                  >
-                    {formatNumberWithSpaces(
-                      (
-                        item.sellPrice -
-                        item.sellPrice * 0.02 -
-                        item.price
-                      ).toFixed(0)
-                    )}
-                  </td>
-
-                  <td>
-                    <button
-                      onClick={() => deleteItem(index)}
-                      className="deleteItem"
-                    >
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                  </td>
-                  <td
-                    className="vendu"
-                    onClick={() => setItemSelled(index, true)}
-                  >
-                    <i className="fas fa-check"></i>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

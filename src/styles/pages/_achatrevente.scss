@@ -6,6 +6,7 @@
   height: 400px;
   grid-template-columns: 100%;
   grid-template-rows: 20% 20% 20% 20% 20%;
+  padding: 40px 0 0;
 
   .inputDiv {
     display: grid;
@@ -57,7 +58,8 @@
   display: grid;
   align-items: start;
   width: 90%;
-  margin: 0 auto 30px;
+  margin: 0 auto;
+  padding: 40px 0 20px;
 
   table {
     border-collapse: collapse;
