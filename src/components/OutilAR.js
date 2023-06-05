@@ -150,7 +150,7 @@ const AchatRevente = () => {
                     onClick={() => deleteItem(index)}
                     className="deleteItem"
                   >
-                    <i class="fa-solid fa-trash"></i>
+                    <i className="fa-solid fa-trash"></i>
                   </button>
                 </td>
                 <td

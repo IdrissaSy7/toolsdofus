@@ -444,7 +444,6 @@ const OutilMap = ({ mapId }) => {
       });
 
       const divResource = document.querySelector(".leaflet-top");
-      console.log(divResource);
 
       let divCoordinates = document.getElementById("position");
       let rectangle = document.querySelector(".rectangleOnMap");

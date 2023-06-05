@@ -8,11 +8,11 @@ const Home = () => {
       <div className="content">
         <div className="home-content">
           <div className="homeImg">
-            <h2>DoTools</h2>
+            <h1>DoTools</h1>
           </div>
           <div className="home-content-text-maj">
             <div className="home-text">
-              <p>
+              <h2>
                 Ce site fourni des informations à propos du MMORPG{" "}
                 <a href="https://www.dofus.com/fr" target="_blank">
                   Dofus
@@ -21,7 +21,7 @@ const Home = () => {
                 interactive contenant la position de toutes les ressources du
                 jeu et un Outil d'Achat Revente permettant de garder un oeil sur
                 ses ventes.
-              </p>
+              </h2>
 
               <p>
                 Si vous souhaitez me signaler un bug :
