@@ -1,29 +1,26 @@
 .home-content {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
   margin: 25px;
   font-family: "font-2", sans-serif;
 
-  div {
+  .home-text {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0 0;
+
     h2,
     p,
     a {
       color: $color-3;
     }
 
-    h2 {
-      margin: 15px 0px;
-    }
-
     p {
       font-size: 1.2rem;
-      font-weight: 500;
-      max-width: 800px;
       margin: 20px;
+      line-height: 30px;
 
       a {
-        font-weight: bolder;
         font-family: "font-1", sans-serif;
       }
     }
@@ -32,10 +29,8 @@
 
 .homeImg {
   width: 100%;
-  height: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  height: 220px;
+  border-radius: 25px;
   background: url(../../../public/img/image2.jpeg) center/cover;
   box-shadow: 0 0 25px $color-1 inset;
 }

@@ -8,7 +8,8 @@ const Home = () => {
       <div className="content">
         <h1 className="center">Accueil</h1>
         <div className="home-content">
-          <div>
+          <div className="homeImg"></div>
+          <div className="home-text">
             <p>
               Ce site fourni des informations à propos du MMORPG{" "}
               <a href="https://www.dofus.com/fr" target="_blank">
@@ -31,11 +32,9 @@ const Home = () => {
               <a href="https://www.ankama.com/fr" target="_blank">
                 Ankama
               </a>
-              .
             </p>
           </div>
         </div>
-        <div className="homeImg"></div>
       </div>
     </div>
   );
