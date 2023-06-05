@@ -38,11 +38,6 @@ body {
   }
 }
 
-.root,
-.content {
-  height: 100vh;
-}
-
 @mixin center {
   display: flex;
   justify-content: center;

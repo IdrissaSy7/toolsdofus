@@ -6,7 +6,7 @@ const Calendrier = () => {
   return (
     <div>
       <Navigation />
-      <div className="content">
+      <div className="content" id="almacontent">
         <h1 className="center">Almanax</h1>
         <div className="center">
           <Almanax />

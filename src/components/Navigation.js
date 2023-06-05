@@ -36,7 +36,7 @@ const Navigation = () => {
           <NavLink to="/achatrevente">
             <li>
               <img src="./img/magasin.png" alt="image magasin" />
-              <span>Vente</span>
+              <span>Achat Revente</span>
             </li>
           </NavLink>
         </ul>
