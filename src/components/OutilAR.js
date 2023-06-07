@@ -28,16 +28,18 @@ function useLocalStorage(key, initialValue) {
 const AchatRevente = () => {
   const [items, setItems] = useLocalStorage("items", []);
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [sellPrice, setSellPrice] = useState("");
+  const [price, setPrice] = useState("0");
+  const [sellPrice, setSellPrice] = useState("0");
   const [formattedPrice, setFormattedPrice] = useState("");
   const [formattedSellPrice, setFormattedSellPrice] = useState("");
 
   const addItem = () => {
     setItems((prevItems) => [...prevItems, { name, price, sellPrice }]);
     setName("");
-    setPrice("");
-    setSellPrice("");
+    setPrice("0");
+    setSellPrice("0");
+    setFormattedPrice("");
+    setFormattedSellPrice("");
   };
 
   const setItemSelled = (index, isSelled) => {
