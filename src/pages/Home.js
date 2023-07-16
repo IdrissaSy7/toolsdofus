@@ -8,7 +8,7 @@ const Home = () => {
       <div className="content">
         <div className="home-content">
           <div className="homeImg">
-            <h1>DoTools</h1>
+            <h1>DofusLand</h1>
           </div>
           <div className="home-content-text-maj">
             <div className="home-text">
@@ -37,7 +37,7 @@ const Home = () => {
               </p>
             </div>
             <div className="home-maj">
-              <p>A jour avec la 2.67 :</p>
+              <p>A jour avec la 2.68 :</p>
               <p>
                 Almanax <span className="update updated"></span>
               </p>
