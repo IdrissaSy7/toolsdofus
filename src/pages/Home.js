@@ -37,7 +37,7 @@ const Home = () => {
               </p>
             </div>
             <div className="home-maj">
-              <p>A jour avec la 2.68 :</p>
+              <p>A jour avec la 2.70 :</p>
               <p>
                 Almanax <span className="update updated"></span>
               </p>

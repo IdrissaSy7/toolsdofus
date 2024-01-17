@@ -6,6 +6,7 @@ const OutilMap = ({ mapId }) => {
   const mapRef = useRef();
   const [copiedPosition, setCopiedPosition] = useState(null);
   const jobs = require(`../ressources/Monde${mapId}`).default;
+  // console.log(jobs);
 
   useEffect(() => {
     const config = {
