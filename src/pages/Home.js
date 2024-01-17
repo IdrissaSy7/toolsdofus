@@ -19,7 +19,7 @@ const Home = () => {
                 </a>
                 . Vous pourrez trouver ici un Calendrier de l'Almanax, une Map
                 interactive contenant la position de toutes les ressources du
-                jeu et un Outil d'Achat Revente permettant de garder un oeil sur
+                jeu et un Outil d'Achat Revente permettant de garder un œil sur
                 ses ventes.
               </p>
 
@@ -29,7 +29,7 @@ const Home = () => {
               </p>
 
               <p>
-                Attention : Certaines illustrations sont la propriété exclusives
+                Attention : Certaines illustrations sont la propriété exclusive
                 d'
                 <a href="https://www.ankama.com/fr" target="_blank">
                   Ankama

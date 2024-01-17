@@ -26,11 +26,6 @@ body a {
   text-decoration: none;
 }
 
-.root,
-.content {
-  height: 100vh;
-}
-
 .center {
   margin: 0 auto;
   text-align: center;
@@ -135,7 +130,8 @@ body a {
   width: 90%;
   height: 400px;
   grid-template-columns: 100%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-rows: 25% 25% 25% 25%;
+  padding: 40px 0 0;
 }
 .input .inputDiv {
   display: grid;
@@ -153,7 +149,7 @@ body a {
   border-radius: 5px;
   border: 1px solid #fff;
   font-size: 1.2rem;
-  margin: 10px;
+  margin: 15px;
 }
 .input button {
   width: 200px;
@@ -181,7 +177,8 @@ body a {
   display: grid;
   align-items: start;
   width: 90%;
-  margin: 0 auto 30px;
+  margin: 0 auto;
+  padding: 40px 0 20px;
 }
 .tableau table {
   border-collapse: collapse;
@@ -756,38 +753,88 @@ body a {
 
 .home-content {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
   margin: 25px;
   font-family: "font-2", sans-serif;
+  text-shadow: 0 0 5px black;
 }
-.home-content div h2,
-.home-content div p,
-.home-content div a {
+.home-content .home-content-text-maj {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0;
+}
+.home-content .home-content-text-maj p,
+.home-content .home-content-text-maj a {
   color: #fff;
-}
-.home-content div h2 {
-  margin: 15px 0px;
-}
-.home-content div p {
   font-size: 1.2rem;
-  font-weight: 500;
-  max-width: 800px;
+  line-height: 30px;
+}
+.home-content .home-content-text-maj a {
+  font-family: "font-1", sans-serif;
+}
+.home-content .home-content-text-maj .home-text {
+  max-width: 80%;
+}
+.home-content .home-content-text-maj .home-text p {
+  margin: 20px 0 0;
+}
+.home-content .home-content-text-maj .home-maj {
+  margin: 20px 0 0;
+  background: #161719;
+  border-radius: 20px;
+  display: grid;
+  align-items: center;
+  position: relative;
+  min-width: 260px;
+  height: 210px;
+}
+.home-content .home-content-text-maj .home-maj::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../../../public/img/maj.jpeg) center/cover;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0.1);
+  border-radius: 20px;
+}
+.home-content .home-content-text-maj .home-maj p {
+  font-family: "font-1", sans-serif;
+  display: grid;
+  grid-template-columns: 95% 5%;
+  align-items: center;
   margin: 20px;
 }
-.home-content div p a {
-  font-weight: bolder;
-  font-family: "font-1", sans-serif;
+.home-content .home-content-text-maj .home-maj .update {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px #36393c inset;
+}
+.home-content .home-content-text-maj .home-maj .updated {
+  background: #008000;
+}
+.home-content .home-content-text-maj .home-maj .notupdated {
+  background: #ff0000;
 }
 
 .homeImg {
   width: 100%;
-  height: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  height: 220px;
+  border-radius: 25px;
   background: url(../../../public/img/image2.jpeg) center/cover;
   box-shadow: 0 0 25px #161719 inset;
+  position: relative;
+}
+.homeImg h1 {
+  font-size: 3rem;
+  font-family: "font-1", sans-serif;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .alma {
@@ -797,6 +844,16 @@ body a {
   height: 350px;
   margin: 0 auto;
   position: relative;
+}
+.alma::before {
+  content: "";
+  position: absolute;
+  background: url(../../../public/img/fondalma.jpeg) center/cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  filter: opacity(0.1);
 }
 .alma .almanax {
   display: flex;
