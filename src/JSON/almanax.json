@@ -1,422 +1,422 @@
 [
   {
     "date": "1 Javian",
-    "offrande": "4 Œuf de Dragoeuf",
-    "titre": "Apparition des ressources et des Archimonstres",
-    "bonus": "La vitesse d'apparition des Archimonstres est augmentée de 200 %. La vitesse d'apparition des ressources de tous types est augmentée de 100 %.",
+    "offrande": "1 Métronome du Début-Temps",
+    "titre": "Jour de l'an",
+    "bonus": "Onome attend les aventuriers qui veulent célébrer la nouvelle année près du temple de Xélor. Sa bénédiction accorde un sortilège temporaire, le bond du Début-Temps, que vous serez capable de lancer durant 12 heures.",
     "imageOffrande": "./img/almanax/janvier/janvier1.png"
   },
   {
     "date": "2 Javian",
-    "offrande": "20 Avoine",
+    "offrande": "4 Michette",
     "titre": "Économie d'ingrédients",
-    "bonus": "Les Paysans économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+    "bonus": "Les Paysans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
     "imageOffrande": "./img/almanax/janvier/janvier2.png"
   },
   {
     "date": "3 Javian",
-    "offrande": "2 Foulard du Sparo",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Monstres de l'Arche d'Otomaï.",
+    "offrande": "1 Capuche d'Armécréante",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans le donjon de la Tempête de l'Eliocalypse.",
     "imageOffrande": "./img/almanax/janvier/janvier3.png"
   },
   {
     "date": "4 Javian",
-    "offrande": "2 Queue de Wolvero",
+    "offrande": "3 Cœur de Crapeur",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Monstres des Crocs de Verre.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % dans la zone des Larmes d'Ouronigride.",
     "imageOffrande": "./img/almanax/janvier/janvier4.png"
   },
   {
     "date": "5 Javian",
-    "offrande": "12 Bois d'If",
-    "titre": "Bois abondant",
-    "bonus": "Les quantités de Bois d'If et de Bois de Bambou récupérées par les Bûcherons sont augmentées de 150 %.",
+    "offrande": "10 Frostiz",
+    "titre": "Récolte abondante",
+    "bonus": "Les quantités de Frostiz récupérées par les Paysans sont augmentées de 200 %.",
     "imageOffrande": "./img/almanax/janvier/janvier5.png"
   },
   {
     "date": "6 Javian",
-    "offrande": "2 Poils de Wo Wabbit",
+    "offrande": "6 Poils de Barbe du Grand Pa Wabbit",
     "titre": "Quête répétable",
     "bonus": "Une quête répétable spéciale est disponible aujourd'hui près de l'atelier des boulangers du village d'Amakna. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
     "imageOffrande": "./img/almanax/janvier/janvier6.png"
   },
   {
     "date": "7 Javian",
-    "offrande": "7 Groin de Sanglier",
-    "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Animaux de la forêt.",
+    "offrande": "6 Boue du Boo ",
+    "titre": "Points d'expérience",
+    "bonus": "Les gains d'expérience sont augmentés de 50 % sur les créatures de type Gadouilleux.",
     "imageOffrande": "./img/almanax/janvier/janvier7.png"
   },
   {
     "date": "8 Javian",
-    "offrande": "2 Serviette de Plage",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 125 % dans le Château Ensablé.",
+    "offrande": "6 Serviette de Plage",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans le donjon du Château Ensablé.",
     "imageOffrande": "./img/almanax/janvier/janvier8.png"
   },
   {
     "date": "9 Javian",
-    "offrande": "2 Epée Sacrée",
+    "offrande": "1 Epée Sacrée",
     "titre": "Objets de qualité",
     "bonus": "La qualité des objets fabriqués dans la ville de Bonta est augmentée.",
     "imageOffrande": "./img/almanax/janvier/janvier9.png"
   },
   {
     "date": "10 Javian",
-    "offrande": "2 Aile de Dragodinde",
-    "titre": "Élevage de Dragodindes",
-    "bonus": "Toutes les variétés de Dragodindes Emeraude donnent naissance à un bébé supplémentaire.",
+    "offrande": "1 Ceinture de Célérité",
+    "titre": "Élevage de montures",
+    "bonus": "Toutes les variétés de dragodindes, volkornes et muldos roux donnent naissance à un bébé supplémentaire.",
     "imageOffrande": "./img/almanax/janvier/janvier10.png"
   },
   {
     "date": "11 Javian",
-    "offrande": "2 Miroir de Dopeul",
+    "offrande": "6 Miroir de Dopeul",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone d'Entraînement des Dopeuls.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 50 % sur les créatures de type Dopeuls.",
     "imageOffrande": "./img/almanax/janvier/janvier11.png"
   },
   {
     "date": "12 Javian",
-    "offrande": "12 Argent",
+    "offrande": "30 Argent",
     "titre": "Minerai abondant",
-    "bonus": "Les quantités d'Argent récupérées par les Mineurs sont augmentées de 150 %.",
+    "bonus": "Les quantités d'Argent récupérées par les Mineurs sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/janvier/janvier12.png"
   },
   {
     "date": "13 Javian",
-    "offrande": "2 Plume du Timansot",
-    "titre": "Bonus des anomalies",
-    "bonus": "Les gains d'expérience sont augmentés de 50 % dans toutes les zones influencées par une anomalie temporelle. De plus, les gains d'expérience et les chances d'obtenir du butin sont augmentés de 20 % dans la zone du Lac Gelé.",
+    "offrande": "2 Bave de Nessil",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans les 4 zones des remparts du Château Harebourg et dans la Tour de la Clepsydre.",
     "imageOffrande": "./img/almanax/janvier/janvier13.png"
   },
   {
     "date": "14 Javian",
-    "offrande": "2 Malléole de Yomi Givrefoux",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Crevasse Perge.",
+    "offrande": "10 Bois de Tremble",
+    "titre": "Bois abondant",
+    "bonus": "Les quantités de Bois de Tremble récupérées par les Bûcherons sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/janvier/janvier14.png"
   },
   {
     "date": "15 Javian",
-    "offrande": "2 Bave de Ouassingue",
-    "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la Tourbière Nauséabonde.",
+    "offrande": "6 Botte trouée de Mégabwork",
+    "titre": "Butin",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 50 % sur les créatures de type Bworks de Cania.",
     "imageOffrande": "./img/almanax/janvier/janvier15.png"
   },
   {
     "date": "16 Javian",
-    "offrande": "2 Relique Familiale",
-    "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Fantômes.",
+    "offrande": "6 Relique Familiale",
+    "titre": "Challenge supplémentaire",
+    "bonus": "Un challenge supplémentaire est généré contre les monstres présents dans la zone de la Bordure de Brâkmar.",
     "imageOffrande": "./img/almanax/janvier/janvier16.png"
   },
   {
     "date": "17 Javian",
-    "offrande": "7 Patte d'Arakne",
-    "titre": "Challenge supplémentaire",
-    "bonus": "Un challenge supplémentaire est généré contre les créatures de type Araknes.",
+    "offrande": "9 Glande d'Arak-haï ",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 125 % sur les créatures de type Arak-haï.",
     "imageOffrande": "./img/almanax/janvier/janvier17.png"
   },
   {
     "date": "18 Javian",
-    "offrande": "14 Bar Rikain",
+    "offrande": "40 Poisson-Chaton",
     "titre": "Pêche abondante",
-    "bonus": "Les quantités de Brochet, d'Anguille, de Perche et de Lotte récupérées par les Pêcheurs sont augmentées de 150 %.",
+    "bonus": "Les quantités de poissons récupérées par les Pêcheurs de tous niveaux sont augmentées de 100 %.",
     "imageOffrande": "./img/almanax/janvier/janvier18.png"
   },
   {
     "date": "19 Javian",
-    "offrande": "3 Bracelet de Ino-Naru",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Kozaru.",
+    "offrande": "2 Pagne d'Alashasss",
+    "titre": "Anomalies temporelles",
+    "bonus": "Les gains d'expérience des montures sont augmentés de 100 % dans toutes les zones influencées par une anomalie temporelle. De plus, les gains d'expérience et les chances d'obtenir du butin sont augmentés de 25 % dans la zone de Crocuzko.",
     "imageOffrande": "./img/almanax/janvier/janvier19.png"
   },
   {
     "date": "20 Javian",
-    "offrande": "2 Pustule de Rat Sio",
+    "offrande": "2 Poil de Rat Brâkmarien",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon des Rats de Bonta.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 50 % sur les créatures de type Rats Brâkmariens.",
     "imageOffrande": "./img/almanax/janvier/janvier20.png"
   },
   {
     "date": "21 Javian",
     "offrande": "1 Bouteille de Gloutoburg",
-    "titre": "Économie d'ingrédients",
-    "bonus": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone du Bord de la forêt Maléfique.",
+    "titre": "Fabrication intensive",
+    "bonus": "Pour chaque objet fabriqué, les Alchimistes ont 25 % de chances de créer un second objet.",
     "imageOffrande": "./img/almanax/janvier/janvier21.png"
   },
   {
     "date": "22 Javian",
-    "offrande": "2 Bractée de Chiendent",
-    "titre": "Bonus des anomalies",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 100 % dans toutes les zones influencées par une anomalie temporelle. De plus, les gains d'expérience et les chances d'obtenir du butin sont augmentés de 25 % dans la zone de la Jungle Obscure.",
+    "offrande": "40 Ortie",
+    "titre": "Cueillette abondante",
+    "bonus": "Les quantités d'Ortie récupérées par les Alchimistes sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/janvier/janvier22.png"
   },
   {
     "date": "23 Javian",
-    "offrande": "5 Viande Hachée",
-    "titre": "Gibier abondant",
-    "bonus": "Les quantités de Viande Hachée récupérées par les Chasseurs sont augmentées de 125%.",
+    "offrande": "2 Rune So",
+    "titre": "Forgemagie améliorée",
+    "bonus": "Les Sculptemages ont 15 % de chances de ne pas consumer de rune lorsqu'ils tentent d'améliorer une arme.",
     "imageOffrande": "./img/almanax/janvier/janvier23.png"
   },
   {
     "date": "24 Javian",
     "offrande": "2 Bourgeon d'Abraknyde Sombre Irascible",
-    "titre": "Percepteurs avides",
-    "bonus": "Le butin généré par les Percepteurs est augmenté de 300 % dans la Clairière du Chêne Mou.",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans le donjon de la Clairière du Chêne Mou.",
     "imageOffrande": "./img/almanax/janvier/janvier24.png"
   },
   {
     "date": "25 Javian",
-    "offrande": "2 Tibia de Koalak Fossoyeur",
+    "offrande": "5 Tibia de Koalak Fossoyeur",
     "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 100 % dans la zone du Cimetière Primitif.",
+    "bonus": "Les gains d'expérience sont augmentés de 75 % dans la zone du Cimetière Primitif.",
     "imageOffrande": "./img/almanax/janvier/janvier25.png"
   },
   {
     "date": "26 Javian",
-    "offrande": "3 Marteau de Boisaille",
-    "titre": "Économie d'ingrédients",
-    "bonus": "Les Forgerons économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+    "offrande": "40 Bois de Chêne",
+    "titre": "Bois abondant",
+    "bonus": "Les quantités de Bois de Chêne récupérées par les Bûcherons sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/janvier/janvier26.png"
   },
   {
     "date": "27 Javian",
-    "offrande": "10 Frostiz",
-    "titre": "Récolte abondante",
-    "bonus": "Les quantités de Frostiz récupérées par les Paysans sont augmentées de 150 %.",
+    "offrande": "4 Carasau",
+    "titre": "Fabrication intensive",
+    "bonus": "Pour chaque objet fabriqué, les Paysans ont 25 % de chances de créer un second objet.",
     "imageOffrande": "./img/almanax/janvier/janvier27.png"
   },
   {
     "date": "28 Javian",
     "offrande": "2 Queue de Rat Pine",
     "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le Repaire de Sphincter Cell.",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans le donjon du Repaire de Sphincter Cell.",
     "imageOffrande": "./img/almanax/janvier/janvier28.png"
   },
   {
     "date": "29 Javian",
-    "offrande": "11 Laine de Bouftou",
-    "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Coin des Bouftous.",
+    "offrande": "6 Laine de Bouftou",
+    "titre": "Challenge supplémentaire",
+    "bonus": "Un challenge supplémentaire est généré contre les monstres présents dans la zone du Coin des Bouftous.",
     "imageOffrande": "./img/almanax/janvier/janvier29.png"
   },
   {
     "date": "30 Javian",
-    "offrande": "2 Sépale de Nerbe",
-    "titre": "Challenge supplémentaire",
-    "bonus": "Un challenge supplémentaire est généré contre les monstres présents dans la zone de la Jungle Obscure.",
+    "offrande": "6 Bourse Suspecte",
+    "titre": "Butin",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 50 % sur les créatures de type Bandits, dont les Artisans sombres.",
     "imageOffrande": "./img/almanax/janvier/janvier30.png"
   },
   {
     "date": "31 Javian",
-    "offrande": "15 Menthe Sauvage",
+    "offrande": "40 Menthe Sauvage",
     "titre": "Cueillette abondante",
     "bonus": "Les quantités de Feuilles de Menthe Sauvage récupérées par les Alchimistes sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/janvier/janvier31.png"
   },
   {
     "date": "1 Flovor",
-    "offrande": "4 Potion de Mini Soin Supérieure",
-    "titre": "Vitalité débordante",
-    "bonus": "La régénération des Points de Vie est augmentée de 300 % (hors combat), et les soins par consommables sont augmentés de 100 %.",
+    "offrande": "1 Blessure du Sacrieur",
+    "titre": "Points d'expérience et butin en larmes",
+    "bonus": "Les gains d'expérience lors des combats contre les monstres et les chances d'obtenir du butin sont augmentés de 50 % pour tous les aventuriers qui sont sous l'influence d'une Idole de Tolgnas.",
     "imageOffrande": "./img/almanax/fevrier/fevrier1.png"
   },
   {
     "date": "2 Flovor",
-    "offrande": "6 Roulade de Carne",
-    "titre": "Butin et XP sur tous les Bouftous",
-    "bonus": "Les gains d'expérience et les chances d'obtenir du butin sont augmentés de 75 % sur toutes les créatures considérées comme des Bouftous, y compris les Boufmouths et les Boufcouls.",
+    "offrande": "2 Brioche à la viande de bouftou",
+    "titre": "La Grande Bouffe",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 125 % sur toutes les créatures considérées comme des Bouftous, y compris les boufmouths et les boufcouls. De plus, les gains d'expérience sont augmentés de 50 % pour les Chasseurs, les Paysans et les Pêcheurs.",
     "imageOffrande": "./img/almanax/fevrier/fevrier2.png"
   },
   {
     "date": "3 Flovor",
-    "offrande": "6 Goujon en Tranche",
-    "titre": "Fabrication intensive",
-    "bonus": "Pour chaque objet fabriqué, les Pêcheurs ont 25 % de chances de créer un second objet.",
+    "offrande": "6 Bombe de Graboule",
+    "titre": "Points d'expérience",
+    "bonus": "Les gains d'expérience sont augmentés de 50 % sur les créatures de type Magik Riktus.",
     "imageOffrande": "./img/almanax/fevrier/fevrier3.png"
   },
   {
     "date": "4 Flovor",
     "offrande": "2 Molaire de Blérice",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 100 % dans la zone des Crocs de Verre.",
+    "titre": "Butin",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % dans la zone des Crocs de verre.",
     "imageOffrande": "./img/almanax/fevrier/fevrier4.png"
   },
   {
     "date": "5 Flovor",
-    "offrande": "4 Concombre",
-    "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon de la Vallée de la Dame des eaux.",
+    "offrande": "1 Fil de Néfileuse",
+    "titre": "Percepteurs avides",
+    "bonus": "Le butin généré par les Percepteurs est augmenté de 200 % dans les donjons de niveau 80 à 110.",
     "imageOffrande": "./img/almanax/fevrier/fevrier5.png"
   },
   {
     "date": "6 Flovor",
-    "offrande": "8 Anneau de Sagesse",
+    "offrande": "2 Marteau de Boisaille",
     "titre": "Économie d'ingrédients",
-    "bonus": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone de la Plaine des Scarafeuilles.",
+    "bonus": "Les Forgerons économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
     "imageOffrande": "./img/almanax/fevrier/fevrier6.png"
   },
   {
     "date": "7 Flovor",
-    "offrande": "2 Croissant de Tsukinochi",
-    "titre": "Bonus des anomalies",
-    "bonus": "Le butin généré par les Percepteurs est augmenté de 100 % dans toutes les zones influencées par une anomalie temporelle. De plus, les gains d'expérience et les chances d'obtenir du butin sont augmentés de 35 % dans la zone du Cimetière de Grobe.",
+    "offrande": "6 Lamelle de Champa Vert",
+    "titre": "Anomalies temporelles",
+    "bonus": "Les gains d'expérience sont augmentés de 50 % dans toutes les zones influencées par une anomalie temporelle. De plus, les gains d'expérience et les chances d'obtenir du butin sont augmentés de 25 % dans la zone du Bord de la Forêt Maléfique.",
     "imageOffrande": "./img/almanax/fevrier/fevrier7.png"
   },
   {
     "date": "8 Flovor",
-    "offrande": "30 Bois de Frêne",
+    "offrande": "40 Bois de Frêne",
     "titre": "Bois abondant",
     "bonus": "Les quantités de Bois de Frêne récupérées par les Bûcherons sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/fevrier/fevrier8.png"
   },
   {
     "date": "9 Flovor",
-    "offrande": "4 Ongle de Kanigrou",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 150 % sur les Kanigrous.",
+    "offrande": "2 Tignasse de Kanihilan",
+    "titre": "Butin",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans le donjon de la Grotte de Kanigroula.",
     "imageOffrande": "./img/almanax/fevrier/fevrier9.png"
   },
   {
     "date": "10 Flovor",
-    "offrande": "5 Pic de Dragodinde Rousse Sauvage",
-    "titre": "Élevage de Dragodindes",
-    "bonus": "Toutes les variétés de Dragodindes Rousses donnent naissance à un bébé supplémentaire.",
+    "offrande": "6 Pic de Dragodinde Dorée",
+    "titre": "Élevage de montures",
+    "bonus": "Toutes les variétés de dragodindes, volkornes et muldos dorés donnent naissance à un bébé supplémentaire.",
     "imageOffrande": "./img/almanax/fevrier/fevrier10.png"
   },
   {
     "date": "11 Flovor",
-    "offrande": "2 Duvet de Mamansot",
-    "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Lac Gelé.",
+    "offrande": "40 Bar Rikain",
+    "titre": "Pêche abondante",
+    "bonus": "Les quantités de Bar Rikain et de Tanche récupérées par les Pêcheurs sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/fevrier/fevrier11.png"
   },
   {
     "date": "12 Flovor",
-    "offrande": "7 Canine de Mergranlou",
+    "offrande": "5 Poils de Mulounoké",
     "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Mulous.",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 125 % sur les créatures de type Mulous.",
     "imageOffrande": "./img/almanax/fevrier/fevrier12.png"
   },
   {
     "date": "13 Flovor",
-    "offrande": "20 Cuivre",
-    "titre": "Minerai abondant",
-    "bonus": "Les quantités de Cuivre récupérées par les Mineurs sont augmentées de 150 %.",
+    "offrande": "1 Bottes Karnaval",
+    "titre": "Cadeaux surprises",
+    "bonus": "Des Pochettes-Surprises ont été ajoutées aux butins des monstres. Lorsqu'elles sont utilisées, elles permettent d'obtenir des Beignets de Karnaval ou bien de se retrouver déguisé en monstre Tout-Fou.",
     "imageOffrande": "./img/almanax/fevrier/fevrier13.png"
   },
   {
     "date": "14 Flovor",
-    "offrande": "5 Shigekax Passion",
+    "offrande": "9 Shigekax Passion",
     "titre": "Expérience amoureuse",
     "bonus": "Tous les personnages atteints par la Malédiction du Ballotin voient leurs gains d'expérience augmentés de 100 % lors des combats contre les monstres.",
     "imageOffrande": "./img/almanax/fevrier/fevrier14.png"
   },
   {
     "date": "15 Flovor",
-    "offrande": "2 Feuille de Branche Soignante",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 125 % dans la Clairière du Chêne Mou.",
+    "offrande": "1 Potion de Vieillesse",
+    "titre": "Coffres aux trésors",
+    "bonus": "Des Coffres de Güss peuvent être gagnés à la fin des chasses aux trésors.",
     "imageOffrande": "./img/almanax/fevrier/fevrier15.png"
   },
   {
     "date": "16 Flovor",
-    "offrande": "3 Viande Hachée",
+    "offrande": "6 Beignet Astrubien",
     "titre": "Économie d'ingrédients",
-    "bonus": "Les Chasseurs économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+    "bonus": "Les Chasseurs économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
     "imageOffrande": "./img/almanax/fevrier/fevrier16.png"
   },
   {
     "date": "17 Flovor",
-    "offrande": "11 Champignon",
+    "offrande": "1 Écorce de Champaknyde",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Champignons.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 50 % sur les créatures de type Fungus.",
     "imageOffrande": "./img/almanax/fevrier/fevrier17.png"
   },
   {
     "date": "18 Flovor",
-    "offrande": "5 Bourgeon d'Abraknyde",
-    "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le Domaine Ancestral.",
+    "offrande": "6 Écorce d'Abrakne Sombre",
+    "titre": "Points d'expérience",
+    "bonus": "Les gains d'expérience sont augmentés de 50 % sur les créatures de type Abraknydiens Sombres.",
     "imageOffrande": "./img/almanax/fevrier/fevrier18.png"
   },
   {
     "date": "19 Flovor",
-    "offrande": "25 Poisson-Chaton",
+    "offrande": "40 Carpe d'Iem",
     "titre": "Pêche abondante",
-    "bonus": "Les quantités de Poissons récupérées par les Pêcheurs de tous niveaux sont augmentées de 100 %.",
+    "bonus": "Les quantités de Poisson-Chaton et de Carpe d'Iem récupérées par les Pêcheurs sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/fevrier/fevrier19.png"
   },
   {
     "date": "20 Flovor",
-    "offrande": "2 Croupion du Bitouf aérien",
-    "titre": "Challenge supplémentaire",
-    "bonus": "Un challenge supplémentaire est généré contre les monstres présents dans la zone du Tronc de l'Arbre Hakam.",
+    "offrande": "3 Croupion du Bitouf aérien",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans les zones du Feuillage et du Tronc de l'arbre Hakam.",
     "imageOffrande": "./img/almanax/fevrier/fevrier20.png"
   },
   {
     "date": "21 Flovor",
-    "offrande": "8 Beignet de Greuvette",
-    "titre": "Cadeaux surprises",
-    "bonus": "Des Pochettes-Surprises ont été ajoutées aux butins des monstres. Lorsqu'elles sont utilisées, elles permettent d'obtenir des Beignets de Karnaval ou bien de se retrouver déguisé en Tofu Tout-Fou.",
+    "offrande": "9 Bière bwork",
+    "titre": "Butin",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % dans les zones du Village des Bworks et du Campement des Bworks.",
     "imageOffrande": "./img/almanax/fevrier/fevrier21.png"
   },
   {
     "date": "22 Flovor",
-    "offrande": "2 Peau de Dragueuse",
-    "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Sanctuaire des Dragoeufs.",
+    "offrande": "5 Peau de Dragueuse",
+    "titre": "Points d'expérience",
+    "bonus": "Les gains d'expérience sont augmentés de 75 % dans la zone du Sanctuaire des Dragoeufs.",
     "imageOffrande": "./img/almanax/fevrier/fevrier22.png"
   },
   {
     "date": "23 Flovor",
-    "offrande": "20 Avoine",
-    "titre": "Apparition des ressources",
-    "bonus": "La vitesse d'apparition des ressources est augmentée de 150 % dans la zone des Champs de Cania.",
+    "offrande": "2 Corne de Malbois",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans le donjon du Tertre du long sommeil.",
     "imageOffrande": "./img/almanax/fevrier/fevrier23.png"
   },
   {
     "date": "24 Flovor",
-    "offrande": "4 Bec du Tofu",
-    "titre": "Bonus des anomalies",
-    "bonus": "La vitesse d'apparition des ressources est augmentée de 50 % dans toutes les zones influencées par une anomalie temporelle. De plus, les gains d'expérience et les chances d'obtenir du butin sont augmentés de 35 % dans la zone des Égouts d'Astrub.",
+    "offrande": "2 Cuir d'Eskoglyphe",
+    "titre": "Challenge supplémentaire",
+    "bonus": "Un challenge supplémentaire est généré contre les monstres présents dans les salles de la Base Abyssale.",
     "imageOffrande": "./img/almanax/fevrier/fevrier24.png"
   },
   {
     "date": "25 Flovor",
-    "offrande": "2 Œil de Madura",
-    "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone du Mont des Tombeaux.",
+    "offrande": "1 Goulobule rouge",
+    "titre": "Butin",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans le donjon du Manoir de Katrepat.",
     "imageOffrande": "./img/almanax/fevrier/fevrier25.png"
   },
   {
     "date": "26 Flovor",
-    "offrande": "3 Peau de Minoskito",
-    "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Minos.",
+    "offrande": "2 Armure de Blindur",
+    "titre": "Challenges augmentés",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 125 % sur les créatures de type Marteaux-Aigris.",
     "imageOffrande": "./img/almanax/fevrier/fevrier26.png"
   },
   {
     "date": "27 Flovor",
-    "offrande": "3 Viande Saignante",
+    "offrande": "4 Marinade Sucrée-Salée",
     "titre": "Gibier abondant",
-    "bonus": "Les quantités de Viande Saignante récupérées par les Chasseurs sont augmentées de 125%.",
+    "bonus": "Les quantités de Viande Saignante et de Viande Persillée récupérées par les Chasseurs sont augmentées de 125 %.",
     "imageOffrande": "./img/almanax/fevrier/fevrier27.png"
   },
   {
     "date": "28 Flovor",
-    "offrande": "2 Noix de Kokoko",
-    "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Monstres des Plages de Moon.",
+    "offrande": "3 Plume de Domoizelle",
+    "titre": "Points d'expérience",
+    "bonus": "Les gains d'expérience sont augmentés de 100 % dans le donjon de l'Arbre de Moon.",
     "imageOffrande": "./img/almanax/fevrier/fevrier28.png"
   },
   {
     "date": "29 Flovor",
-    "offrande": "2 Nageoire de Compétition",
-    "titre": "Butin et XP pour tous",
-    "bonus": "Les gains d'expérience et les chances d'obtenir du butin sont augmentés de 100 % lors des combats contre les monstres. De plus, les gains d'expérience sont augmentés de 50 % pour tous les métiers.",
+    "offrande": "6 Nageoire de Compétition",
+    "titre": "Points d'expérience et butin pour tous",
+    "bonus": "Les gains d'expérience et les chances d'obtenir du butin sont augmentés de 75 % lors des combats contre les monstres. De plus, les gains d'expérience sont augmentés de 50 % pour tous les métiers.",
     "imageOffrande": "./img/almanax/fevrier/fevrier29.png"
   },
   {
@@ -430,7 +430,7 @@
     "date": "2 Martalo",
     "offrande": "2 Crâne d'Aventurier",
     "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Vallée de la Morh'Kitu.",
+    "bonus": "Les gains d'expérience sont augmentés de 75 % dans la zone de la Vallée de la Morh'Kitu.",
     "imageOffrande": "./img/almanax/mars/mars2.png"
   },
   {
@@ -458,21 +458,21 @@
     "date": "6 Martalo",
     "offrande": "2 Étoffe de Rat Bougri",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la Bourgade.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % dans la zone de la Bourgade.",
     "imageOffrande": "./img/almanax/mars/mars6.png"
   },
   {
     "date": "7 Martalo",
     "offrande": "2 Étoffe de Kurookin",
     "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 125 % dans le donjon du Dojo du Vent.",
+    "bonus": "Les gains d'expérience sont augmentés de 100 % dans le donjon du Dojo du Vent.",
     "imageOffrande": "./img/almanax/mars/mars7.png"
   },
   {
     "date": "8 Martalo",
     "offrande": "7 Patte de Wabbit",
     "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Wabbits.",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 125 % sur les créatures de type Wabbits, Gawde du Wa et Wabbits mutants.",
     "imageOffrande": "./img/almanax/mars/mars8.png"
   },
   {
@@ -507,7 +507,7 @@
     "date": "13 Martalo",
     "offrande": "2 Bâton Kouyu",
     "titre": "Expérience Robillesque",
-    "bonus": "Les gains d'expérience sont augmentés de 100 % sur tous les gardiens de donjon.",
+    "bonus": "Les gains d'expérience sont augmentés de 75 % sur tous les gardiens de donjon.",
     "imageOffrande": "./img/almanax/mars/mars13.png"
   },
   {
@@ -521,14 +521,14 @@
     "date": "15 Martalo",
     "offrande": "2 Groin de Sanglier des Plaines",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 150 % sur les Sangliers des Plaines.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 125 % sur les Sangliers des Plaines.",
     "imageOffrande": "./img/almanax/mars/mars15.png"
   },
   {
     "date": "16 Martalo",
     "offrande": "2 Jouet de Gamine Zoth",
     "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 100 % dans la zone du Village des Zoths.",
+    "bonus": "Les gains d'expérience sont augmentés de 75 % dans la zone du Village des Zoths.",
     "imageOffrande": "./img/almanax/mars/mars16.png"
   },
   {
@@ -556,14 +556,14 @@
     "date": "20 Martalo",
     "offrande": "2 Pierre du Courtilieur",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon de la mine abandonnée de Sakaï.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans le donjon de la mine abandonnée de Sakaï.",
     "imageOffrande": "./img/almanax/mars/mars20.png"
   },
   {
     "date": "21 Martalo",
     "offrande": "6 Bave de Bouftou",
     "titre": "Points d'expérience",
-    "bonus": "Les gains d'expérience sont augmentés de 150 % sur les Bouftous.",
+    "bonus": "Les gains d'expérience sont augmentés de 125 % sur les Bouftous.",
     "imageOffrande": "./img/almanax/mars/mars21.png"
   },
   {
@@ -591,14 +591,14 @@
     "date": "25 Martalo",
     "offrande": "2 Laine de Maho Givrefoux",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone des Cavernes Givrefoux.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % dans la zone des Cavernes Givrefoux.",
     "imageOffrande": "./img/almanax/mars/mars25.png"
   },
   {
     "date": "26 Martalo",
     "offrande": "2 Oreille d'Apériglours",
     "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la Ruche des Gloursons.",
+    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 150 % dans la zone de la Ruche des Gloursons.",
     "imageOffrande": "./img/almanax/mars/mars26.png"
   },
   {
@@ -626,14 +626,14 @@
     "date": "30 Martalo",
     "offrande": "5 Poing rocheux d'Ishigro Pake",
     "titre": "Butin",
-    "bonus": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Tanuki.",
+    "bonus": "Les chances d'obtenir du butin sont augmentées de 50 % sur les créatures de type Tanuki.",
     "imageOffrande": "./img/almanax/mars/mars30.png"
   },
   {
     "date": "31 Martalo",
-    "offrande": "2 Dent de Larve Émeraude",
-    "titre": "Challenges augmentés",
-    "bonus": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Larves.",
+    "offrande": "4 Œuf de Dragoeuf",
+    "titre": "Quête répétable",
+    "bonus": "Une quête répétable spéciale est disponible aujourd'hui près du sanctuaire des Zobals. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
     "imageOffrande": "./img/almanax/mars/mars31.png"
   },
   {

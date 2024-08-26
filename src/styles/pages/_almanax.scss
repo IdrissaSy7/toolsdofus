@@ -188,6 +188,16 @@
     justify-items: center;
     align-items: center;
     background: $color-1;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 85%;
+      height: 1px;
+      background: $color-2;
+      position: absolute;
+      bottom: 5px;
+    }
 
     p {
       display: grid;
@@ -196,7 +206,6 @@
       padding: 15px 10px;
       width: 100%;
       height: 100%;
-      border: 1px solid $color-2;
       letter-spacing: 2px;
       line-height: 23px;
     }
