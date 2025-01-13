@@ -17,15 +17,14 @@ const Home = () => {
                 <a href="https://www.dofus.com/fr" target="_blank">
                   Dofus
                 </a>
-                . Vous pourrez trouver ici un Calendrier de l'Almanax, une Map
-                interactive contenant la position de toutes les ressources du
-                jeu et un Outil d'Achat Revente permettant de garder un œil sur
-                ses ventes.
+                . Vous pourrez trouver ici un calendrier de l'Almanax ainsi
+                qu'une carte interactive contenant la position de toutes les
+                ressources du jeu.
               </p>
 
               <p>
                 Si vous souhaitez me signaler un bug :
-                <a href="mailto: contact117817@gmail.com"> Contact</a>
+                <a href="mailto: contact117817@gmail.com"> Contact</a>.
               </p>
 
               <p>
@@ -34,18 +33,20 @@ const Home = () => {
                 <a href="https://www.ankama.com/fr" target="_blank">
                   Ankama
                 </a>
+                .
               </p>
             </div>
             <div className="home-maj">
-              <p>A jour avec la 2.70 :</p>
+              <p>A jour avec la 3.0 :</p>
               <p>
-                Almanax <span className="update updated"></span>
+                Carte <span className="update updated"></span>
               </p>
               <p>
-                Map <span className="update updated"></span>
+                Almanax <span className="update notupdated"></span>
               </p>
             </div>
           </div>
+          <div className="homeImg2"></div>
         </div>
       </div>
     </div>

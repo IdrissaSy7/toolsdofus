@@ -213,10 +213,10 @@ const OfferingsCalendar = () => {
               className={`month ${
                 month.name === selectedMonth ? "selected" : ""
               }`}
-            >
-              <img src={month.img} alt={month.name} />
+              >
               <p>{month.name}</p>
-              <p>({month.realName})</p>
+              <img src={month.img} alt={month.name} />
+              {/* <p>({month.realName})</p> */}
             </div>
           ))}
         </div>

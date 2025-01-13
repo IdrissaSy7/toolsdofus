@@ -19,6 +19,13 @@ const Navigation = () => {
             </li>
           </NavLink>
 
+          <NavLink to="/map">
+            <li>
+              <img src="./img/geoposition.png" alt="image bousolle" />
+              <span>Carte</span>
+            </li>
+          </NavLink>
+
           <NavLink to="/almanax">
             <li>
               <img src="./img/calendrier.png" alt="image calendrier" />
@@ -26,19 +33,12 @@ const Navigation = () => {
             </li>
           </NavLink>
 
-          <NavLink to="/map">
-            <li>
-              <img src="./img/geoposition.png" alt="image bousolle" />
-              <span>Map</span>
-            </li>
-          </NavLink>
-
-          <NavLink to="/achatrevente">
+          {/* <NavLink to="/achatrevente">
             <li>
               <img src="./img/magasin.png" alt="image magasin" />
               <span>Achat Revente</span>
             </li>
-          </NavLink>
+          </NavLink> */}
         </ul>
       </label>
     </div>
